@@ -1,0 +1,56 @@
+#dev mode
+version: '3'
+
+networks:
+  backend:
+
+volumes:
+  mysql:
+
+services:
+  jipp:
+     build : ./main
+     image: laravel-apache
+     restart: unless-stopped
+     depends_on:
+       - db
+     volumes: 
+       - ./sik:/var/www/html
+       - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./config/laravel.conf:/etc/apache2/sites-available/000-default.conf
+     networks:
+       - backend
+     healthcheck:
+       test: curl --fail -s http://localhost:80/ || exit 1
+       interval: 1m30s
+       timeout: 10s
+       retries: 3
+     ports: 
+       - 80:80
+
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: database
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysqlpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - '8082:80'
+    restart: unless-stopped
+    volumes:
+        - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    environment:
+        PMA_HOST: db
+    depends_on:
+        - db
+    networks:
+        - backend
