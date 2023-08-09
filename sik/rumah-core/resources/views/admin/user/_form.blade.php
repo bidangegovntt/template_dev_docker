@@ -32,7 +32,7 @@
     <div class="lg:w-1/3 md:w-1/2 sm:mr-10 rounded-sm relative">
         <div class="relative mb-4">
             @if ($user)
-            <x-profile-picture class="rounded-lg m-2 w-3/4" src="{{ disk_url($user->profile_photo_path, 'public') }}"></x-profile-picture>
+            <x-profile-picture class="rounded-lg m-2 w-3/4" src="{{ asset('storage/' . $user->profile_photo_path) }}"></x-profile-picture>
             @endif
 
             <x-form-widget :form="$form['profile_photo_path']" label="Foto Profil"></x-form-widget>

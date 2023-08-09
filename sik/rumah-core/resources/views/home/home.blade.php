@@ -38,7 +38,7 @@
 
 				@if(env('HOME_DISABLE_BANNER_2') == '')
                 <div class="carousel-item img-fluid {{ $has_active ? '' : 'active' }}"
-					style="background-image: url('{{ asset(env('HOME_BANNER_IMG_2', 'home/img/banner-home2.jpg')) }}');border-radius: 0px !important;">
+					style="background-image: url('{{ asset(env('HOME_BANNER_IMG_2', 'home/img/banner-home2.jpeg')) }}');border-radius: 0px !important;">
 					<div class="carousel-container">
 						<div class="carousel-content animate__animated animate__fadeInUp">
 							<div class="text-center">
