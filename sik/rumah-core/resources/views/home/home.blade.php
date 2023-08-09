@@ -28,6 +28,25 @@
                         </div>
                     </div>
 
+                <div class="carousel-item img-fluid active"
+                        style="background-image: url('{{ asset('home/img/banner-home2.jpg') }}');border-radius: 0px !important;">
+                        <div class="carousel-container">
+                            <div class="carousel-content animate__animated animate__fadeInUp">
+                                <div class="text-center">
+                                    <a href="#">
+                                        <h2>Dirgahayu Republik Indonesia</h2>
+                                    </a>
+                                    <a href="#scrollspyHeading1" class="btn btn-orange scrollto">Lihat Selengkapnya</a>
+                                </div>
+                                {{-- <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil
+                                    ut
+                                    aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
+                                    accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                                <div class="text-center"><a href="" class="btn-get-started">Read More</a></div> --}}
+                            </div>
+                        </div>
+                    </div>
+
                 @foreach ($innovations as $key => $innovation)
                     <div class="carousel-item img-fluid"
                         style="background-image: url('{{ asset('storage/' . $innovation->photo) }}');border-radius: 0px !important;">
