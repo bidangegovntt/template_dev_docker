@@ -132,7 +132,7 @@
                                 <li><a href="{{ route('my-profile') }}">Profilku</a></li>
                                 <hr class="mx-3 my-0">
 
-                                @if (Auth::user()->isSuperAdmin())
+                                @if (Auth::user()->isSuperAdmin() || Auth::user()->hasRole('admin inovasi'))
                                 <li>
                                     <a href={{ route('admin.home') }}>Beranda Admin</a>
                                 </li>

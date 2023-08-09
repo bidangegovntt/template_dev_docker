@@ -53,7 +53,7 @@
                                                 <strong>Inovator</strong>
                                                 <br>
                                                 <span class="text-muted">
-                                                    {{ $innovation->innovator->name }}
+                                                    {{ $innovation->innovator->name ?? ''}}
                                                 </span>
 
                                             </div>
@@ -61,7 +61,7 @@
                                                 <strong>Kategori</strong>
                                                 <br>
                                                 <span class="text-muted">
-                                                    {{ $innovation->category->name }}
+                                                    {{ $innovation->category->name ?? ''}}
                                                 </span>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                                 <strong>Admin Inovasi</strong>
                                                 <br>
                                                 <span class="text-muted">
-                                                    {{ $innovation->admin->name }}
+                                                    {{ $innovation->admin->name ?? '' }}
                                                 </span>
                                             </div>
                                             <div class="col-6 col-md-12 col-lg-6 mb-3">
@@ -78,14 +78,14 @@
                                                     <strong>Tahun</strong>
                                                     <br>
                                                     <span class="text-muted">
-                                                        {{ $innovation->year_start }}
+                                                        {{ $innovation->year_start ?? ''}}
                                                     </span>
                                                 </div>
                                                 <div class="mb-3">
                                                     <strong>Status</strong>
                                                     <br>
                                                     <span class="text-muted">
-                                                        {{ $innovation->sustainabilityStatus->name }}
+                                                        {{ $innovation->sustainabilityStatus->name ?? ''}}
                                                     </span>
                                                 </div>
                                             </div>
@@ -95,7 +95,7 @@
                                                 <strong>Prestasi</strong>
                                                 <br>
                                                 <span class="text-muted">
-                                                    {{ $innovation->achievement }}
+                                                    {{ $innovation->achievement ?? ''}}
                                                 </span>
                                             </div>
                                         </div>
@@ -116,7 +116,7 @@
                                         <label for="" class="fw-bold">Dibuat Oleh</label>
                                         @if (sizeof($innovation->creator_id()->get()) > 0)
                                             <br>
-                                            <span>{{ $innovation->creator_id->name }}</span>
+                                            <span>{{ $innovation->creator_id->name ?? ''}}</span>
                                         @else
                                             <br>
                                             <span>-</span>
@@ -128,7 +128,7 @@
                                         <label for="" class="fw-bold">Diperbarui Oleh</label>
                                         @if (sizeof($innovation->updater_id()->get()) > 0)
                                             <br>
-                                            <span>{{ $innovation->updater_id->name }}</span>
+                                            <span>{{ $innovation->updater_id->name ?? ''}}</span>
                                         @else
                                             <br>
                                             <span>-</span>

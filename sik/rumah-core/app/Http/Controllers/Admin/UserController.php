@@ -44,7 +44,7 @@ class UserController extends Controller
             });
         }
 
-        if ($user->hasRole('admin biro kabupaten')) {
+        if ($user->hasRole('admin biro kabupaten') || $user->hasRole('admin inovasi')) {
             $users->where('city_id', $user->city_id);
         }
 
@@ -135,18 +135,30 @@ class UserController extends Controller
                 'required' => false,
             ]);
 
-        if (Auth::user()->hasRole('admin biro kabupaten|admin bagian kabupaten')) {
+		$user = Auth::user();
+		$allowedRoles = [];
+		if ($user->hasRole('admin biro kabupaten|admin bagian kabupaten|admin inovasi')
+		) {
             $form->add('city_id', HiddenType::class, [
                 'label_attr' => ['class' => 'hidden'],
                 'empty_data' => Auth::user()->city_id,
 
             ]);
-        } else {
+        } elseif ($user->isSuperAdmin() || $user->hasRole('admin biro provinsi')) {
             $form->add('city_id', ChoiceType::class, [
                 'choices' => City::OrderBy('name')->get()->pluck('id', 'name'),
                 'required' => false,
             ]);
         }
+
+		if ($user->isSuperAdmin())
+		{
+			$allowedRoles = Role::all();
+		} else {
+			$roles = $user->roles->pluck('name');
+			$roles[] = 'publik';
+			$allowedRoles = Role::whereIn('name', $roles)->get();
+		}
 
         $form->add('description', TextAreaType::class, [
             'required' => false,
@@ -157,7 +169,7 @@ class UserController extends Controller
                 'mapped' => false,
             ])
             ->add('roles', ChoiceType::class, [
-                'choices' => Role::all()->pluck('id', 'name'),
+                'choices' => $allowedRoles ? $allowedRoles->pluck('id', 'name') : [],
                 'required' => false,
                 'mapped' => false,
                 'expanded' => true,

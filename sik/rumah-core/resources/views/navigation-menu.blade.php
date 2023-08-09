@@ -24,7 +24,7 @@
 
                     @role('admin inovasi')
                         @php
-                            $menus = [['name' => 'Beranda Admin', 'routeName' => 'admin.home'], ['name' => 'Inovasi', 'routeName' => 'admin.innovation']];
+                            $menus = [['name' => 'Beranda Admin', 'routeName' => 'admin.home'], ['name' => 'Inovasi', 'routeName' => 'admin.innovation'], ['name' => 'Pengguna', 'routeName' => 'admin.user']];
                         @endphp
                     @endrole
 
