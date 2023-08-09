@@ -31,6 +31,7 @@
 
     <div class="lg:w-1/3 md:w-1/2 sm:mr-10 rounded-sm relative">
         <div class="relative mb-4">
+			@dd(disk_url($user->profile_photo_path, 'public'))
             @if ($user)
             <x-profile-picture class="rounded-lg m-2 w-3/4" src="{{ disk_url($user->profile_photo_path, 'public') }}"></x-profile-picture>
             @endif
