@@ -15,7 +15,7 @@ services:
      depends_on:
        - db
      volumes: 
-       - ./sik:/var/www/html
+       - ./sik/rumahinovasi:/var/www/html
        - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
        - ./config/laravel.conf:/etc/apache2/sites-available/000-default.conf
      networks:
