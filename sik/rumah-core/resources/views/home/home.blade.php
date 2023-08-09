@@ -9,43 +9,51 @@
 
             <div class="carousel-inner" role="listbox">
 
-                <div class="carousel-item img-fluid active"
-                        style="background-image: url('{{ asset('home/img/welcome.jpg') }}');border-radius: 0px !important;">
-                        <div class="carousel-container">
-                            <div class="carousel-content animate__animated animate__fadeInUp">
-                                <div class="text-center">
-                                    <a href="#">
-                                        <h2>Selamat Datang di Rumah Inovasi Jawa Timur</h2>
-                                    </a>
-                                    <a href="#scrollspyHeading1" class="btn btn-orange scrollto">Lihat Selengkapnya</a>
-                                </div>
-                                {{-- <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil
-                                    ut
-                                    aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                                    accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                                <div class="text-center"><a href="" class="btn-get-started">Read More</a></div> --}}
-                            </div>
-                        </div>
-                    </div>
+				@php
+					$has_active = false;
+				@endphp
 
-                <div class="carousel-item img-fluid active"
-                        style="background-image: url('{{ asset('home/img/banner-home2.jpg') }}');border-radius: 0px !important;">
-                        <div class="carousel-container">
-                            <div class="carousel-content animate__animated animate__fadeInUp">
-                                <div class="text-center">
-                                    <a href="#">
-                                        <h2>Dirgahayu Republik Indonesia</h2>
-                                    </a>
-                                    <a href="#scrollspyHeading1" class="btn btn-orange scrollto">Lihat Selengkapnya</a>
-                                </div>
-                                {{-- <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil
-                                    ut
-                                    aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                                    accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                                <div class="text-center"><a href="" class="btn-get-started">Read More</a></div> --}}
-                            </div>
-                        </div>
-                    </div>
+				@if(env('HOME_DISABLE_BANNER_1') == '')
+				<div class="carousel-item img-fluid {{ $has_active ? '' : 'active' }}"
+					style="background-image: url('{{ asset(env('HOME_BANNER_IMG_1', 'home/img/welcome.jpg')) }}');border-radius: 0px !important;">
+					<div class="carousel-container">
+						<div class="carousel-content animate__animated animate__fadeInUp">
+							<div class="text-center">
+								<a href="#">
+									<h2>Selamat Datang di {{ env('APP_NAME', 'Lopo Inovasi NTT') }}</h2>
+								</a>
+								<a href="#scrollspyHeading1" class="btn btn-orange scrollto">Lihat Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+				</div>
+					@php
+						$has_active = true;
+					@endphp
+				@else
+					@php
+						$has_active = false;
+					@endphp
+				@endif
+
+				@if(env('HOME_DISABLE_BANNER_2') == '')
+                <div class="carousel-item img-fluid {{ $has_active ? '' : 'active' }}"
+					style="background-image: url('{{ asset(env('HOME_BANNER_IMG_2', 'home/img/banner-home2.jpg')) }}');border-radius: 0px !important;">
+					<div class="carousel-container">
+						<div class="carousel-content animate__animated animate__fadeInUp">
+							<div class="text-center">
+								<a href="#">
+									<h2>Dirgahayu Republik Indonesia</h2>
+								</a>
+								<a href="#scrollspyHeading1" class="btn btn-orange scrollto">Lihat Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				@php
+					$has_active = true;
+				@endphp
+				@endif
 
                 @foreach ($innovations as $key => $innovation)
                     <div class="carousel-item img-fluid"
@@ -57,11 +65,6 @@
                                         <h2>{{ $innovation->title }}</h2>
                                     </a>
                                 </div>
-                                {{-- <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil
-                                    ut
-                                    aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque
-                                    accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                                <div class="text-center"><a href="" class="btn-get-started">Read More</a></div> --}}
                             </div>
                         </div>
                     </div>
