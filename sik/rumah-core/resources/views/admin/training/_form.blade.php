@@ -42,7 +42,10 @@
     <div class="w-full sm:w-full md:w-full lg:w-4/6 mb-4 lg:mr-4">
         <div class="mb-4">
             <x-form-widget :form="$form['title']" class="summernote" label="Judul"></x-form-widget>
+			<span><label>Slug</label>: {{ $form['title']->vars['value'] }}</code></span>
         </div>
+
+		<x-form-widget :form="$form['training_category_id']" label="Kategori"></x-form-widget>
 
         <div class="mb-4">
             <x-form-widget :form="$form['photo']" label="Foto Utama"></x-form-widget>
