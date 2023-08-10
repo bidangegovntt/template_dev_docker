@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Rumah Inovasi</title>
+    <title>Lopo Inovasi</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -219,10 +219,10 @@
     <footer id="footer" class="bg-dark text-light text-center">
         <div class="container py-4">
             <div class="copyright">
-                &copy; Copyright <strong><span>Rumah Inovasi</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Lopo Inovasi</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                Designed by <a href="{{ url('') }}">Rumah Inovasi</a>
+                Designed by <a href="{{ url('') }}">Lopo Inovasi</a>
             </div>
         </div>
     </footer>

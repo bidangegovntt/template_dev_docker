@@ -86,8 +86,8 @@
                     @php
                         $array_faq = [
                             [
-                                'title' => 'Selamat Datang di Rumah Inovasi Jawa Timur',
-                                'content' => 'Rumah Inovasi adalah pusat informasi dan pengetahuan untuk inovasi pelayanan publik di Jawa Timur yang bertujuan untuk mendokumentasikan, mendiseminasikan dan mereplikasi informasi serta pengetahuan terkait inovasi pelayanan publik dan sebagai platform untuk saling interaksi, konsultasi dan mentoring diantara stakeholder inovasi pelayanan publik',
+                                'title' => 'Selamat Datang di Lopo Inovasi NTT',
+                                'content' => 'Lopo Inovasi adalah pusat informasi dan pengetahuan untuk inovasi pelayanan publik di NTT yang bertujuan untuk mendokumentasikan, mendiseminasikan dan mereplikasi informasi serta pengetahuan terkait inovasi pelayanan publik dan sebagai platform untuk saling interaksi, konsultasi dan mentoring diantara stakeholder inovasi pelayanan publik',
                             ],
                         ];
                     @endphp

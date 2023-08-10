@@ -38,10 +38,10 @@
                                         saya sebut dengan istilah Spiritualitas-Kreatif,” ujarnya.&nbsp;</p>
                                     <p>Bergabung sebagai peneliti di The JawaPos Institute of Pro-Otonomi (JPIP) sejak tahun
                                         2018, ia terlibat dalam beberapa proyek. Di antaranya sebagai Communication
-                                        Specialist proyek Ayo Inklusif! bersama USAID dan Researcher proyek Rumah Inovasi
+                                        Specialist proyek Ayo Inklusif! bersama USAID dan Researcher proyek Lopo Inovasi
                                         bersama KOMPAK-DFAT. Sejak tahun 2019 hingga sekarang terlibat sebagai Tim Penilai
                                         Provinsi aspek Inovasi Pelayanan Publik dalam Sinergisitas Penyelenggaraan
-                                        Pemerintahan di Kecamatan Pemprov Jawa Timur.&nbsp;</p>
+                                        Pemerintahan di Kecamatan Pemprov NTT.&nbsp;</p>
                                     <p>Selain menjadi editor dan indie publisher, juga aktif menulis buku. Beberapa judul
                                         yang telah diterbitkan di antaranya Wujudkan Tulisanmu Menjadi Buku (Esensi
                                         Erlangga), Jurnalistik Asyik (Esensi Erlangga), Sang Genius Politik (Caremedia), dan

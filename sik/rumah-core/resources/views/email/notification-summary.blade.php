@@ -1,5 +1,5 @@
 @component('mail::message')
-{{ __('Anda memiliki notifikasi yang belum dibaca di website Rumah Inovasi, klik tombol di bawah ini untuk melihat notifikasi') }}
+{{ __('Anda memiliki notifikasi yang belum dibaca di website Lopo Inovasi, klik tombol di bawah ini untuk melihat notifikasi') }}
 
 @component('mail::button', ['url' => route('notification')])
 {{ __('Baca Notifikasi') }}
@@ -26,7 +26,7 @@
 <p>Terima kasih</p>
 
 <p>
-    <strong>Rumah Inovasi</strong>
+    <strong>Lopo Inovasi</strong>
     <br>
     <a href="{{ env('APP_URL') }}">{{ env('APP_URL') }}</a>
 </p>
