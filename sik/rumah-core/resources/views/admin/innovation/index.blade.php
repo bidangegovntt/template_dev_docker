@@ -63,7 +63,8 @@
 
                                         <div class="inline-flex float-right">
                                             <x-publish-button icon-only
-                                                class="{{ $innovation->published_status == 'draft' ? 'bg-gray-200' : '' }}">
+												state="{{ $innovation->published_status }}" 
+												:state="$innovation->published_status">
                                                 {{ $innovation->published_status }}
                                             </x-publish-button>
 
