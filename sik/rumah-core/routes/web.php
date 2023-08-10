@@ -88,6 +88,8 @@ Route::get('/kunjungan-lapangan/{id}', [FieldTripController::class, 'showKunjung
 
 Route::prefix('hotline-inovasi')->group(function () {
     Route::get('/', [HotlineController::class, 'index'])->name('hotline-inovasi');
+    Route::get('/klinik', [HotlineController::class, 'index'])->name('hotline-inovasi-klinik');
+    Route::get('/tim-inkubator', [HotlineController::class, 'timInkubator'])->name('hotline-inovasi-tim-inkubator');
 
     Route::get('/doctor/{innovationDoctor}', [HotlineController::class, 'detail'])
         ->name('hotline-inovasi-detail');

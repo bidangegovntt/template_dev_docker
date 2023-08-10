@@ -83,9 +83,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="">Sinovik</a></li>
-                            <li><a href="">IGA</a></li>
-                            <li><a href="">KIPP NTT</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-list') }}">Sinovik</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-list') }}">IGA</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-list') }}">KIPP NTT</a></li>
                         </ul>
 {{--
                         <ul>
@@ -110,8 +110,8 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="{{ url('klinik-inovasi') }}">Tim Inkubator</a></li>
-                            <li><a href="{{ url('hotline-inovasi') }}">Klinik Inovasi</a></li>
+                            <li><a href="{{ route('hotline-inovasi-tim-inkubator') }}">Tim Inkubator</a></li>
+                            <li><a href="{{ route('hotline-inovasi-klinik') }}">Klinik Inovasi</a></li>
                         </ul>
 {{--
                         <ul>
