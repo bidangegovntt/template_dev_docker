@@ -75,11 +75,11 @@ Route::get('/forum-inovasi/{topic_id}', function ($topic_id) {
     ]);
 })->name('forum-inovasi-show-topic');
 
-Route::get('/training', function () {
+Route::get('/artikel', function () {
     return view('home/training');
 })->name('training-list');
 
-Route::get('/training/{training_id}', [TrainingController::class, 'showTraining'])->name('training-show');
+Route::get('/artikel/{training_id}', [TrainingController::class, 'showTraining'])->name('training-show');
 
 Route::get('/kunjungan-lapangan', function () {
     return view('home/kunjungan-lapangan');
@@ -202,7 +202,7 @@ Route::prefix('/admin')->middleware(['auth'])->middleware(AuthAdmin::class)->gro
         Route::post('delete/{learningMaterial}', [AdminController\KlinikInovasiController::class, 'delete'])->name('admin.klinik-inovasi.delete');
     });
 
-    Route::prefix('training')->group(function () {
+    Route::prefix('artikel')->group(function () {
         Route::get('/', [AdminController\TrainingController::class, 'index'])->name('admin.training');
         Route::get('new', [AdminController\TrainingController::class, 'create'])->name('admin.training.new');
         Route::post('new', [AdminController\TrainingController::class, 'create'])->name('admin.training.create');
