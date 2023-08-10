@@ -1,177 +1,157 @@
 @extends('home.layout')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('home/vendor/leaflet/leaflet/leaflet.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('home/vendor/leaflet/leaflet-sidebar/leaflet-sidebar.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('home/vendor/leaflet/leaflet-markercluster/MarkerCluster.css') }}" />
-    <link rel="stylesheet" href="{{ asset('home/vendor/leaflet/leaflet-markercluster/MarkerCluster.Default.css') }}" />
-    <style>
-        #map {
-            height: 60vh;
-        }
-
-        .leaflet-control {
-            z-index: 1
-        }
-
-    </style>
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <h2>Peta Inovasi</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                    <li>Dapur Inovasi</li>
+                    <li>Sebaran</li>
                 </ol>
             </div>
         </div>
     </section>
+
+	@include('home._inovasi-map')
+
     <section id="content" class="pt-4 mt-1">
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <form class="mb-5 card shadow" id="filter_inovasi" onsubmit="return false">
+            <div class="row">
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card shadow">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <label for="">Judul</label>
-                                        <input type="text" class="form-control" placeholder="Cari Judul" name="title"
-                                            autocomplete="off">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="">Kategori</label>
-                                        <select class="form-select" name="category">
-                                            <option value="">-SEMUA-</option>
-                                            @foreach ($category_list as $cat_item)
-                                                <option value="{{ $cat_item['id'] }}">{{ $cat_item['name'] }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="">Kab/Kota</label>
-                                        <select class="form-select" name="city">
-                                            <option value="">-SEMUA-</option>
-                                            @foreach ($city_list as $city_item)
-                                                <option value="{{ $city_item['id'] }}">{{ $city_item['name'] }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="">Tahun</label>
-                                        <input type="text" class="form-control" name="year_start" autocomplete="off">
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-6 d-grid">
-                                            <button class="btn btn-orange btn-block" type="submit"
-                                                onclick="update_map()">Cari</button>
-                                        </div>
-                                        <div class="col-6 d-grid">
-                                            <button class="btn btn-outline-secondary btn-block"
-                                                onclick="reset_cari()">Reset</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="h3">Kategori</div>
+                            <canvas id="category_chart" height="400px" width="400px"></canvas>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card">
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card shadow">
                         <div class="card-body">
-                            <div wire:ignore>
-                                <div id="map"></div>
-                            </div>
+                            <div class="h3">Tahun</div>
+                            <canvas id="year_chart" height="400px" width="400px"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="h3">Status Keberlanjutan</div>
+                            <canvas id="status_chart" height="400px" width="400px"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-    <script src="{{ asset('home/vendor/leaflet/leaflet/leaflet.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/leaflet-sidebar/leaflet-sidebar.min.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/leaflet-ajax/dist/leaflet.ajax.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/leaflet-choropleth/dist/choropleth.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/Leaflet.ActiveLayers/dist/leaflet.active-layers.min.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/leaflet-markercluster/leaflet.markercluster.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/spin.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/leaflet.spin.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/chroma.js') }}"></script>
-    <script src="{{ asset('home/vendor/leaflet/jquery.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+        integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script> --}}
+    {{-- <script
+        src="https://github.com/nagix/chartjs-plugin-colorschemes/releases/download/v0.4.0/chartjs-plugin-colorschemes.min.js">
+    </script> --}}
+
     <script>
-        var innovationRoute = "{{ route('list-inovasi') }}";
+        // var dynamicColors = function() {
+        //     var r = Math.floor(Math.random() * 255);
+        //     var g = Math.floor(Math.random() * 255);
+        //     var b = Math.floor(Math.random() * 255);
+        //     return "rgb(" + r + "," + g + "," + b + ")";
+        // }
 
-        var map = L.map('map');
-        map.setView([-7.5237446270431985, 112.30809716414304], 8); // jawatimur
+        // function dynamicColors() {
+        //     return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        // }
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        var colors = ["ff595e", "ffca3a", "8ac926", "1982c4", "6a4c93", "f94144", "f3722c", "f8961e", "f9844a", "f9c74f",
+            "90be6d", "43aa8b", "4d908e", "577590", "277da1"
+        ];
 
-        var layerGroup = L.layerGroup().addTo(map);
+        /* kategori */
+        var categoryCanvas = document.getElementById("category_chart").getContext('2d');
 
-        function loadMap() {
-            var aumAjax = new L.GeoJSON.AJAX("{{ route('maps.innovations') }}", {
-                onEachFeature: function(feature, layer) {
-                    L.marker(feature.geometry.coordinates.reverse()).addTo(layerGroup)
-                        .bindPopup('<strong>' + feature.properties.name + '</strong>' +
-                            '<br>' +
-                            '<small>' + feature.properties.alamat + '</small>' +
-                            '<br>' +
-                            '<small>' + feature.properties.kategori + ' - ' + feature.properties.tahun +
-                            '</small>' +
-                            '<br>' +
-                            '<br>' +
-                            '<div style="float:right: font-size: 0.7em"><a href="' + innovationRoute + '/' +
-                            feature.properties.id + '">lebih lanjut</a></div>'
-                        )
-                }
-            });
-        }
+        var categoryData = {
+            labels: [
+                @foreach ($categories as $category)
+                    "{{ $category->category->name ?? '' }}",
+                @endforeach
+            ],
+            datasets: [{
+                data: [
+                    @foreach ($categories as $category)
+                        {{ $category->count_category }},
+                    @endforeach
+                ],
+                backgroundColor: [
+                    @foreach ($categories as $key => $category)
+                        '#'+colors[{{ $key }}],
+                    @endforeach
+                ]
+            }]
+        };
 
-        $(document).ready(function() {
-            loadMap();
+        var categoryChart = new Chart(categoryCanvas, {
+            type: 'pie',
+            data: categoryData,
         });
 
-        function ajaxCallback(response) {
-            layerGroup.clearLayers();
+        /* tahun */
+        var yearCanvas = document.getElementById("year_chart").getContext('2d');
 
-            var equipmentDetails = response.features;
+        var yearData = {
+            labels: [
+                @foreach ($years as $year)
+                    "{{ $year->year_start }}",
+                @endforeach
+            ],
+            datasets: [{
+                data: [
+                    @foreach ($years as $year)
+                        {{ $year->count_year }},
+                    @endforeach
+                ],
+                backgroundColor: [
+                    @foreach ($years as $key => $year)
+                        '#'+colors[{{ $key }}],
+                    @endforeach
+                ]
+            }]
+        };
 
-            $.each(equipmentDetails, function(i, value) {
-                L.marker(value.geometry.coordinates.reverse()).addTo(layerGroup)
-                    .bindPopup('<strong>' + value.properties.name + '</strong>' +
-                        '<br>' +
-                        '<small>' + value.properties.alamat + '</small>' +
-                        '<br>' +
-                        '<small>' + value.properties.kategori + ' - ' + value.properties.tahun + '</small>' +
-                        '<br>' +
-                        '<br>' +
-                        '<div style="float:right: font-size: 0.7em"><a href="' + innovationRoute + '/' +
-                        value.properties.id + '">lebih lanjut</a></div>'
-                    )
-            });
-        }
+        var yearChart = new Chart(yearCanvas, {
+            type: 'pie',
+            data: yearData,
+        });
 
-        function update_map() {
-            $.ajax({
-                url: "{{ route('maps.innovations') }}" + '?' + $('#filter_inovasi').serialize(),
-                method: 'get',
-                dataType: 'json',
-            }).done(ajaxCallback);
-        }
+        /* status */
+        var statusCanvas = document.getElementById("status_chart").getContext('2d');
 
-        function reset_cari() {
-            $('input, select').val('');
+        var statusData = {
+            labels: [
+                @foreach ($statuses as $status)
+                    "{{ $status->sustainabilityStatus->name ?? '' }}",
+                @endforeach
+            ],
+            datasets: [{
+                data: [
+                    @foreach ($statuses as $status)
+                        {{ $status->count_status }},
+                    @endforeach
+                ],
+                backgroundColor: [
+                    @foreach ($statuses as $key => $status)
+                        '#'+colors[{{ $key }}],
+                    @endforeach
+                ]
+            }]
+        };
 
-            $.ajax({
-                url: "{{ route('maps.innovations') }}",
-                method: 'get',
-                dataType: 'json',
-            }).done(ajaxCallback);
-        }
+        var statusChart = new Chart(statusCanvas, {
+            type: 'pie',
+            data: statusData,
+        });
     </script>
 @endsection

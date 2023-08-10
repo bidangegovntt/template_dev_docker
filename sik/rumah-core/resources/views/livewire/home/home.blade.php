@@ -167,6 +167,9 @@
             </div>
         </div>
     </section>
+
+	@include('home._inovasi-map', ['showTitle' => true, 'textTitle' => 'Sebaran <strong>Inovasi</strong>'])
+
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-title" data-aos="fade-up">

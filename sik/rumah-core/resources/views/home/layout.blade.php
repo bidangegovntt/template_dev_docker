@@ -122,7 +122,7 @@
 --}}
                     </li>
                     <li class="dropdown">
-						<li><a href="{{ url('') }}">Sebaran</a></li>
+						<li><a href="{{ route('lumbung-inovasi-map') }}">Sebaran</a></li>
                     </li>
                     <li class="dropdown">
                         <a href="javascript:void(0)">

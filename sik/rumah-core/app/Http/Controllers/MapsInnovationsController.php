@@ -6,16 +6,30 @@ use App\Models\City;
 use App\Models\Innovation;
 use App\Models\InnovationCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MapsInnovationsController extends Controller
 {
     public function index()
     {
+		$centerPoint = new \stdClass;
+		$centerPoint->lat = env('MAP_CENTER_POINT_LAT', -9.2406129);
+		$centerPoint->lng = env('MAP_CENTER_POINT_LAT', 122.8742191);;
+		$centerPoint->zoomLevel = env('MAP_CENTER_POINT_ZOOM', 7);
+
+        $categories = $this->category_count();
+        $years = $this->year_count();
+        $statuses = $this->status_count();
+
         return view(
             'home.lumbung-inovasi-map',
             [
                 'category_list' => InnovationCategory::all(),
                 'city_list' => City::all(),
+				'centerPoint' => $centerPoint,
+				'categories' => $categories,
+				'years' => $years,
+				'statuses' => $statuses,
             ]
         );
     }
@@ -134,6 +148,26 @@ class MapsInnovationsController extends Controller
 
         // dd($data_collection);
 
-        echo json_encode($data_collection);
+		return $data_collection;
+    }
+
+    private function category_count()
+    {
+        return Innovation::groupBy('category_id')
+            ->with('category')
+            ->select(DB::raw('category_id, count(category_id) count_category'))->get();
+    }
+
+    private function year_count()
+    {
+        return Innovation::groupBy('year_start')
+            ->select(DB::raw('year_start, count(year_start) count_year'))->get();
+    }
+
+    private function status_count()
+    {
+        return Innovation::groupBy('sustainability_status_id')
+            ->with('sustainabilityStatus')
+            ->select(DB::raw('sustainability_status_id, count(sustainability_status_id) count_status'))->get();
     }
 }
