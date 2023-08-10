@@ -18,11 +18,13 @@
                 ['font', ['strikethrough', 'superscript', 'subscript']],
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
+				['insert', ['link', 'picture', 'video']],
+                ['height', ['height']],
+				['view', ['fullscreen', 'help']]
             ]
 
             $('#form_content').summernote({
-                height: 150,
+                height: 400,
                 toolbar: summernote_toolbar_opt
             });
 
@@ -43,9 +45,21 @@
         </div>
 
         <div class="mb-4">
+            <x-form-widget :form="$form['photo']" label="Foto Utama"></x-form-widget>
+            @if ($training)
+				@if($training->photo)
+					<a class="link" href="{{ asset('storage/' . $training->photo )  }}">Lihat Foto</a>
+				@endif
+            @endif
+        </div>
+
+
+{{--
+        <div class="mb-4">
             <x-form-widget :form="$form['training_date']" class="" label="Tanggal Training">
             </x-form-widget>
         </div>
+--}}
 
         <div class="mb-4">
             <x-form-widget :form="$form['content']" class="summernote" label="Isi"></x-form-widget>

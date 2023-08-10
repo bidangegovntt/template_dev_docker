@@ -213,7 +213,7 @@
 
             <div class="row" data-aos="fade-up">
 
-                <div class="col-md-4 col-lg-3 mx-auto mb-3">
+                <div class="col-3 mx-auto mb-3">
                     <div class="card shadow">
                         <div class="card-body text-center">
                             <img src="{{ asset('home/img/logo-pemprov-jatim.jpg') }}" class="img-fluid" alt=""
@@ -222,43 +222,11 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-3 mx-auto mb-3">
+                <div class="col-3 mx-auto mb-3">
                     <div class="card shadow">
                         <div class="card-body text-center">
-                            <img src="{{ asset('home/img/logo-bappenas.png') }}" class="img-fluid" alt=""
+                            <img src="{{ asset('home/img/usaid.jpg') }}" class="img-fluid" alt=""
                                 style="height: 120px; border-radius: 0px !important">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-lg-3 mx-auto mb-3">
-                    <div class="card shadow">
-                        <div class="card-body text-center">
-                            <img src="{{ asset('home/img/logo-australian-government.png') }}" class="img-fluid"
-                                alt="" style="height: 120px; border-radius: 0px !important">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" data-aos="fade-up">
-                <div class="col-12 col-lg-8 mx-auto">
-                    <div class="row">
-                        <div class="col-12 col-lg-6 mx-auto mb-3">
-                            <div class="card shadow">
-                                <div class="card-body text-center">
-                                    <img src="{{ asset('home/img/logo-jpip.jpg') }}" class="img-fluid" alt=""
-                                        style="height: 120px; border-radius: 0px !important">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-lg-6 mx-auto mb-3">
-                            <div class="card shadow">
-                                <div class="card-body text-center">
-                                    <img src="{{ asset('home/img/logo-kompak.png') }}" class="img-fluid" alt=""
-                                        style="height: 120px; border-radius: 0px !important">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
