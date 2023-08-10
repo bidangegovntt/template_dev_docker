@@ -221,6 +221,11 @@ Route::prefix('/admin')->middleware(['auth'])->middleware(AuthAdmin::class)->gro
         Route::post('edit/{fieldtrip}', [AdminController\FieldtripController::class, 'edit'])->name('admin.fieldtrip.update');
         Route::post('delete/{fieldtrip}', [AdminController\FieldtripController::class, 'delete'])->name('admin.fieldtrip.delete');
     });
+
+	Route::prefix('setting')->group(function() {
+        Route::get('/analytic', [AdminController\SettingAnalyticController::class, 'google'])->name('admin.setting.analytic.google');
+
+	});
 });
 
 Route::get('/analisis-inovasi', [AnalisisController::class, 'show'])->name('analisis-inovasi');
