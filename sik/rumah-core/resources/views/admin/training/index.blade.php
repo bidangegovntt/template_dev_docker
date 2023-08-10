@@ -34,7 +34,7 @@
                                         </h2>
 
                                         <div class="leading-relaxed mb-4">
-                                            {!! substr($training->content, 0, 300) !!}
+                                            {!! substr(Purify::config(['HTML.Allowed' => 'p,b,i,strong,em,span,div'])->clean($training->content), 0, 300) !!}
                                         </div>
 
                                         <div class="inline-flex float-left">
@@ -52,7 +52,7 @@
                                                 <x-edit-button></x-edit-button>
                                             </a>
 
-                                            <a href="{{ route('training-show', ['training_id' => $training->id]) }}"
+                                            <a href="{{ route('training-show', ['training' => $training]) }}"
                                                 target="_blank">
                                                 <x-show-button></x-show-button>
                                             </a>
