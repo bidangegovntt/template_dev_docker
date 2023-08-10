@@ -182,8 +182,10 @@
 <script src="{{ asset('home/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/leaflet-location-picker/leaflet-locationpicker.min.js') }}"></script>
 @php
-$latitude = '-7.5237446270431985';
-$longitude = '112.30809716414304';
+$latitude = env('MAP_CENTER_POINT_LAT', -9.2406129);
+$longitude = env('MAP_CENTER_POINT_LAT', 122.8742191);
+$zoom = env('MAP_CENTER_POINT_ZOOM', 6);
+
 
 if (isset($innovation)) {
     if ($innovation->latitude != 0) {
@@ -202,7 +204,7 @@ if (isset($innovation)) {
         height: '200',
         map: {
             center: [{{ $latitude }}, {{ $longitude }}],
-            zoom: 7
+            zoom: '{{ $zoom }}'
         },
         onChangeLocation: function(e) {
             $('#form_latitude').val(e.latlng.lat);

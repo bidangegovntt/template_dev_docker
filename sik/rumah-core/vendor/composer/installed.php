@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '590d4e148e4beedd755eac0101003cd3046f4ed7',
+        'reference' => 'fec46af158feba220d778299b75e6d44be1d8259',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -44,6 +44,15 @@
             'install_path' => __DIR__ . '/../barryvdh/laravel-form-bridge',
             'aliases' => array(),
             'reference' => 'b49b3d7e481d702129b56479b9a4ca762f0b49f2',
+            'dev_requirement' => false,
+        ),
+        'biscolab/laravel-recaptcha' => array(
+            'pretty_version' => 'v6.0.0',
+            'version' => '6.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../biscolab/laravel-recaptcha',
+            'aliases' => array(),
+            'reference' => 'c3d742e6a082cefe2ffce1e13b17a104abfc7234',
             'dev_requirement' => false,
         ),
         'brick/math' => array(
@@ -562,7 +571,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '590d4e148e4beedd755eac0101003cd3046f4ed7',
+            'reference' => 'fec46af158feba220d778299b75e6d44be1d8259',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
