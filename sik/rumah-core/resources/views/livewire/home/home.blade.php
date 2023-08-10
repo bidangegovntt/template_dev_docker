@@ -86,8 +86,11 @@
                     @php
                         $array_faq = [
                             [
-                                'title' => 'Selamat Datang di Lopo Inovasi NTT',
-                                'content' => 'Lopo Inovasi adalah pusat informasi dan pengetahuan untuk inovasi pelayanan publik di NTT yang bertujuan untuk mendokumentasikan, mendiseminasikan dan mereplikasi informasi serta pengetahuan terkait inovasi pelayanan publik dan sebagai platform untuk saling interaksi, konsultasi dan mentoring diantara stakeholder inovasi pelayanan publik',
+                                'title' => 'Selamat datang di Lopo Inovasi Flobamorata',
+                                'content' => '<p>Lopo Inovasi Flobamorata adalah platform yang menyediakan informasi dan pengetahuan terkait inovasi pelayanan publik penyelenggaraan pemerintahan, pelaksanaan pembangunan dan pemberdayaan masyarakat di Provinsi Nusa Tenggara Timur. Platform ini dikembangkan pada Tahun 2022, dikelola oleh Pemerintah Provinsi Nusa Tenggara Timur.</p>
+<p>Lopo Inovasi Flobamorata  berfungsi sebagai tempat untuk pendaftaran, penilaian dan juga pembinaan dan evaluasi dan pendokumentasian inovasi yang telah teruji, serta memiliki dampak positif yang signifikan bagi masyarakat atau pengguna pelayanan.</p>
+<p>Lopo Inovasi Flobamorata juga menyediakan forum replikasi yang memungkinkan para pelaku inovasi, utamanya inovator dan calon inovator untuk berdiskusi dan bertukar pengetahuan dalam pengembangan inovasi pelayanan publik. </p>
+<p>Lopo Inovasi Flobamorata juga menjadi semacam repositori yang memiliki kompleksitas data inovasi yang relatif komprehensif. Sehingga direktori inovasi yang ada di platform ini bisa digunakan sebagai manajemen pengetahuan (<i>Knowledge Management</i>) untuk pengembangan inovasi. Selamat menjelajahi Lopo Inovasi Flobamorata, selamat berinovasi!</p>',
                             ],
                         ];
                     @endphp
@@ -108,7 +111,7 @@
                                 <div class="collapse @if ($key == 0) show @endif" id="jobCollapse{{ $key }}"
                                     data-bs-parent="#accordionJobs">
                                     <div class="card-body mt-n1 pt-0">
-                                        <p class="fs-sm">{{ $faq['content'] }}</p>
+                                        <p class="fs-sm">{!! $faq['content'] !!}</p>
                                         {{-- <div class="d-flex align-items-center justify-content-between">
                                             <div class="fs-sm"><span class="text-nowrap me-3"><i
                                                         class="fi-map-pin text-muted me-1"> </i>Chicago</span><span
