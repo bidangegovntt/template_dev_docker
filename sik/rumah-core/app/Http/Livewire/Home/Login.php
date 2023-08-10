@@ -30,7 +30,11 @@ class Login extends Component
         $user = User::where("email", '=', $this->email)->first();
 
         if ($user) {
-            if (Hash::check($this->password, $user->password)) {
+			if (! $user->isActive()) {
+                session()->flash('msg-error', 'Pengguna berstatus non aktif');
+				$this->password = null;
+			}
+			elseif (Hash::check($this->password, $user->password)) {
                 Auth::login($user);
 
                 $this->reset_field();
@@ -40,9 +44,11 @@ class Login extends Component
                 $this->dispatchBrowserEvent('goto', ['url' => $this->redirectIfSuccess()]);
             } else {
                 session()->flash('msg-error', 'Email atau password salah');
+				$this->password = null;
             }
         } else {
             session()->flash('msg-error', 'Email tidak ditemukan');
+			$this->password = null;
         }
     }
 

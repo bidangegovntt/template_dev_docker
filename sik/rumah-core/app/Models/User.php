@@ -209,4 +209,21 @@ class User extends Authenticatable
         return $this->name;
     }
 
+	public function markNonActive()
+	{
+		$this->disabled_at = new \DateTimeImmutable;
+		$this->disabled_by = Auth::user()->id;
+	}
+
+	public function markActive()
+	{
+		$this->disabled_at = null;
+		$this->disabled_by = null;
+	}
+
+	public function isActive()
+	{
+		return empty($this->disabled_at);
+	}
+
 }
