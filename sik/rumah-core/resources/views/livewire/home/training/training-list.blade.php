@@ -21,6 +21,10 @@
                                     <a href="{{ route('training-show', ['training' => $training]) }}">
                                         <h5 class="card-title">{{ $training->title }}</h5>
                                     </a>
+
+									<div>
+                                            {!! substr(Purify::config(['HTML.Allowed' => 'p,b,i,strong,em,span,div'])->clean($training->content), 0, 300) !!}
+									</div>
                                     <p class="card-text text-muted"><i class="fa fa-clock"></i>
                                         {{ $training->created_time }}</p>
                                 </li>
