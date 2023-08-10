@@ -85,7 +85,7 @@
                         <ul>
                             <li><a href="">Sinovik</a></li>
                             <li><a href="">IGA</a></li>
-                            <li><a href="">KIP NTT</a></li>
+                            <li><a href="">KIPP NTT</a></li>
                         </ul>
 {{--
                         <ul>
@@ -101,7 +101,7 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="">KIP NTT</a></li>
+                            <li><a href="/proposal">KIPP NTT</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
