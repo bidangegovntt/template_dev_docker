@@ -85,7 +85,7 @@
                         <ul>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">Sinovik</a></li>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">IGA</a></li>
-                            <li><a href="{{ route('lumbung-inovasi-list') }}">KIPP NTT</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-list') }}">KOIN YANLIK</a></li>
                         </ul>
 {{--
                         <ul>
@@ -101,7 +101,7 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="{{ route('proposal') }}">KIPP NTT</a></li>
+                            <li><a href="{{ route('proposal') }}">KOIN YANLIK</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
