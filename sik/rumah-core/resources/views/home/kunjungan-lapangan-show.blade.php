@@ -7,7 +7,7 @@
                 <h2>Kunjungan Lapangan</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                    <li>Ruang Tamu</li>
+                    <li>Artikel</li>
                 </ol>
             </div>
         </div>
