@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="section-title p-0" data-aos="fade-up">
-                        <h4>Training</h4>
+                        <h4>Artikel</h4>
                     </div>
                     <div class="list-group rounded shadow-sm" data-aos="fade-up">
                         @foreach ($trainings as $training)

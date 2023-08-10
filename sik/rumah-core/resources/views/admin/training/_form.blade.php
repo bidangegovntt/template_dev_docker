@@ -56,7 +56,7 @@
 
 {{--
         <div class="mb-4">
-            <x-form-widget :form="$form['training_date']" class="" label="Tanggal Training">
+            <x-form-widget :form="$form['training_date']" class="" label="Tanggal Artikel">
             </x-form-widget>
         </div>
 --}}

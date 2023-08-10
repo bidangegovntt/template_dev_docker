@@ -72,7 +72,7 @@
                         </ul>
 {{--
                         <ul>
-                            <li><a href="{{ route('training-list') }}">Training Event</a></li>
+                            <li><a href="{{ route('training-list') }}">Artikel</a></li>
                             <li><a href="{{ route('kunjungan-lapangan') }}">Kunjungan Lapangan</a></li>
                         </ul>
 --}}

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin as AdminController;
 use App\Http\Controllers\AnalisisController;
 use App\Http\Controllers\HotlineController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ProposalController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -251,3 +252,5 @@ Route::prefix('artisan')->group(function () {
         Artisan::call('db:seed adminInovasiKabupatenProvinsiSeeder');
     });
 });
+
+Route::get('/proposal', [ProposalController::class, 'index'])->name('proposal')->middleware('auth');

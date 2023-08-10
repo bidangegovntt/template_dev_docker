@@ -17,6 +17,17 @@ class Training extends Model
         return $this->title;
     }
 
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = Slugger::slug($value);
+    }
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Slugger::slug($value);
+    }
+
 	public function getPhotoPath()
 	{
 		return $this->photoPath;

@@ -16,6 +16,7 @@ use App\Traits\UploadFormFile;
 use Storage;
 use Barryvdh\Form\Facade\FormFactory;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use App\Helpers\Slugger;
 
 class TrainingController extends Controller
 {
