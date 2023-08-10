@@ -7,8 +7,22 @@
         <div class="flex">
             <div class="w-4/5">
                 <form method="GET">
-                    <input type="text" class="w-2/5" name="search" placeholder="Cari..."
-                        value="{{ request('search') }}">
+					<div class="flex">
+						<div class="w-2/5">
+							<x-form-widget :form="$form['title']" label=""></x-form-widget>
+						</div>
+						<div class="w-1/5">
+							<x-form-widget :form="$form['published_status']" label="" class="py-2 ml-1"></x-form-widget>
+						</div>
+						<div class="w-1/5">
+							@formRow($form['save'], [
+								'attr' => [
+									'class' => 'item-flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2'
+								]
+							])
+						</div>
+					</div>
+
                 </form>
             </div>
 
