@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Rumah Inovasi</title>
+    <title>Lopo Inovasi</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,9 +66,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="">Sejarah</a></li>
-                            <li><a href="">Tim Lopo Inovasi</a></li>
-                            <li><a href="">Survey Pengguna</a></li>
+                            <li><a href="{{ route('training-show', 2)}}">Sejarah</a></li>
+                            <li><a href="{{ route('training-show', 3) }}">Tim Lopo Inovasi</a></li>
+                            <li><a href="{{ route('training-show', 4) }}">Survey Pengguna</a></li>
                         </ul>
 {{--
                         <ul>
@@ -85,7 +85,7 @@
                         <ul>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">Sinovik</a></li>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">IGA</a></li>
-                            <li><a href="{{ route('lumbung-inovasi-list') }}">KIPP NTT</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-list') }}">KOIN YANLIK</a></li>
                         </ul>
 {{--
                         <ul>
@@ -101,7 +101,7 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="{{ route('proposal') }}">KIPP NTT</a></li>
+                            <li><a href="{{ route('proposal') }}">KOIN YANLIK</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -122,7 +122,7 @@
 --}}
                     </li>
                     <li class="dropdown">
-						<li><a href="{{ url('') }}">Sebaran</a></li>
+						<li><a href="{{ route('lumbung-inovasi-map') }}">Sebaran</a></li>
                     </li>
                     <li class="dropdown">
                         <a href="javascript:void(0)">
@@ -219,10 +219,10 @@
     <footer id="footer" class="bg-dark text-light text-center">
         <div class="container py-4">
             <div class="copyright">
-                &copy; Copyright <strong><span>Rumah Inovasi</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Lopo Inovasi</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                Designed by <a href="{{ url('') }}">Rumah Inovasi</a>
+                Designed by <a href="{{ url('') }}">Lopo Inovasi</a>
             </div>
         </div>
     </footer>

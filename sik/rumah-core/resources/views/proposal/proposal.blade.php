@@ -20,7 +20,7 @@
                         Inovasi Pelayanan Publik adalah terobosan jenis pelayanan publik baik yang merupakan gagasan/ide kreatif orisinal dan/atau adaptasi/modifikasi yang memberikan manfaat bagi masyarakat, baik secara langsung maupun tidak langsung
                         <br><br>
                         <h3>Tema</h3>
-                        Tema Kompetisi Inovasi Pelayanan publik di Lingkungan Kementerian/Lembaga, Pemerintah Daerah, Badan Usaha Milik Negara, dan Badan Usaha Milik Daerah Tahun 2021 adalah “Inovasi Pelayanan Publik Untuk Percepatan Pencapaian Sasaran Strategis Pembangunan Daerah sebagai perwujudan Nawa Bhakti Satya Provinsi Jawa Timur melalui Budaya CETTAR dan Semangat Optimis NTT Bangkit".
+                        Tema Kompetisi Inovasi Pelayanan publik di Lingkungan Kementerian/Lembaga, Pemerintah Daerah, Badan Usaha Milik Negara, dan Badan Usaha Milik Daerah Tahun 2021 adalah “Inovasi Pelayanan Publik Untuk Percepatan Pencapaian Sasaran Strategis Pembangunan Daerah sebagai perwujudan Nawa Bhakti Satya Provinsi NTT melalui Budaya CETTAR dan Semangat Optimis NTT Bangkit".
                         <br><br>
                         <h3>Kelompok Inovasi</h3>
                         Sesuai dengan KOVABLIK tahun 2022, Inovasi yang dikompetisikan dibagi menjadi tiga kelompok, yang terdiri dari:<br>
@@ -74,7 +74,7 @@
                               <li>jumlah Inovasi yang dapat diajukan oleh tiap Peserta secara keseluruhan adalah maksimal 3 (tiga) yang terdiri dari 3 (tiga) Inovasi BUMD untuk Kelompok Umum.</li>
                             </ol>
                           </li>
-                          <li>Kelompok Khusus tidak termasuk dalam ketentuan tersebut karena keikutsertaannya berdasarkan undangan khusus dari Biro Organisasi Sekretariat Daerah Provinsi Jawa Timur.</li>
+                          <li>Kelompok Khusus tidak termasuk dalam ketentuan tersebut karena keikutsertaannya berdasarkan undangan khusus dari Biro Organisasi Sekretariat Daerah Provinsi NTT.</li>
                         </ul>
                         <br>
 
@@ -96,8 +96,8 @@
                         <br>
                         <h3>Peserta Kompetisi</h3>
                         <ul class="term">
-                          <li>Peserta adalah Perangkat Daerah Provinsi, Kab/Kota , dan BUMD Provinsi Jawa Timur;</li>
-                          <li>maksimal 5(lima) untuk perangkat daerah provinsi, 3(tiga) untuk Kab/Kota dan BUMD Provinsi Jawa Timur;</li>
+                          <li>Peserta adalah Perangkat Daerah Provinsi, Kab/Kota , dan BUMD Provinsi NTT;</li>
+                          <li>maksimal 5(lima) untuk perangkat daerah provinsi, 3(tiga) untuk Kab/Kota dan BUMD Provinsi NTT;</li>
                           <li>Peserta wajib menjamin kebenaran dan keakuratan seluruh data dan informasi yang disampaikan dalam KOVABLIK. Penyelenggara KOVABLIK berhak mendiskualifikasi Peserta dan/atau membatalkan dan mencabut kembali penghargaan yang telah diberikan apabila di kemudian hari ditemukan bahwa terdapat data dan informasi yang disampaikan Peserta yang tidak akurat, salah, dan/atau palsu.</li>
                         </ul>
                         <br>
