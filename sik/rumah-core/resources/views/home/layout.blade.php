@@ -47,7 +47,7 @@
 
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex justify-content-between">
+        <div class="container-fluid d-flex justify-content-between">
 
             <div class="logo align-self-center">
                 <a href="{{ url('') }}" class="logo mr-auto">
@@ -62,34 +62,78 @@
                     <li><a href="{{ url('') }}">Beranda</a></li>
                     <li class="dropdown">
                         <a href="javascript:void(0)">
-                            <span>Ruang Tamu </span>
+                            <span>Profil Lopo Inovasi</span>
                             <i class="bi bi-chevron-down"></i>
                         </a>
+                        <ul>
+                            <li><a href="">Sejarah</a></li>
+                            <li><a href="">Tim Lopo Inovasi</a></li>
+                            <li><a href="">Survey Pengguna</a></li>
+                        </ul>
+{{--
                         <ul>
                             <li><a href="{{ route('training-list') }}">Training Event</a></li>
                             <li><a href="{{ route('kunjungan-lapangan') }}">Kunjungan Lapangan</a></li>
                         </ul>
+--}}
                     </li>
                     <li class="dropdown">
                         <a href="javascript:void(0)">
-                            <span>Dapur Inovasi </span>
+                            <span>Direktori</span>
                             <i class="bi bi-chevron-down"></i>
                         </a>
+                        <ul>
+                            <li><a href="">Sinovik</a></li>
+                            <li><a href="">IGA</a></li>
+                            <li><a href="">KIPP NTT</a></li>
+                        </ul>
+{{--
                         <ul>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">Lumbung</a></li>
                             <li><a href="{{ route('forum-replikasi-list') }}">Forum Replikasi</a></li>
                             <li><a href="{{ route('lumbung-inovasi-map') }}">Peta Inovasi</a></li>
                         </ul>
+--}}
                     </li>
                     <li class="dropdown">
                         <a href="javascript:void(0)">
-                            <span>Pojok Inovasi </span>
+                            <span>Kompetisi</span>
                             <i class="bi bi-chevron-down"></i>
                         </a>
+                        <ul>
+                            <li><a href="/proposal">KIPP NTT</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <span>Replikasi & Inkubasi</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="{{ url('klinik-inovasi') }}">Tim Inkubator</a></li>
+                            <li><a href="{{ url('hotline-inovasi') }}">Klinik Inovasi</a></li>
+                        </ul>
+{{--
                         <ul>
                             <li><a href="{{ url('klinik-inovasi') }}">Klinik</a></li>
                             <li><a href="{{ url('hotline-inovasi') }}">Hotline</a></li>
                             <li><a href="{{ route('analisis-inovasi') }}">Analisis</a></li>
+                        </ul>
+--}}
+                    </li>
+                    <li class="dropdown">
+						<li><a href="{{ url('') }}">Sebaran</a></li>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <span>Pustaka</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="">Berita Kegiatan</a></li>
+                            <li><a href="">Pengumuman</a></li>
+                            <li><a href="">Regulasi</a></li>
+                            <li><a href="">Referensi</a></li>
                         </ul>
                     </li>
                     @guest
