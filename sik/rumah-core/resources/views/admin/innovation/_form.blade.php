@@ -84,7 +84,7 @@
         </div>
 
         <div class="mb-4">
-            <x-form-widget :form="$form['year_start']" label="Tahun mulai"></x-form-widget>
+            <x-form-widget :form="$form['year_start']" label="Tahun Penerapan"></x-form-widget>
         </div>
 
         <div class="mb-4">

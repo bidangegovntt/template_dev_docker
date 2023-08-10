@@ -8,7 +8,7 @@
                     <h2>Profil Inovasi</h2>
                     <ol>
                         <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                        <li><a href="{{ route('lumbung-inovasi-list') }}" class="fw-bold">Lumbung</a></li>
+                        <li><a href="{{ route('lumbung-inovasi-list') }}" class="fw-bold">Direktori</a></li>
                     </ol>
                 </div>
             </div>
@@ -49,14 +49,15 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <div class="col-6">
-                                                <strong>Inovator</strong>
-                                                <br>
-                                                <span class="text-muted">
-                                                    {{ $innovation->innovator->name ?? ''}}
-                                                </span>
 
-                                            </div>
+											<div class="col-6 mb-3">
+												<strong>Status</strong>
+												<br>
+												<span class="text-muted">
+													{{ $innovation->sustainabilityStatus->name ?? ''}}
+												</span>
+											</div>
+
                                             <div class="col-6 col-md-12 col-lg-4 mb-3">
                                                 <strong>Kategori</strong>
                                                 <br>
@@ -75,17 +76,10 @@
                                             </div>
                                             <div class="col-6 col-md-12 col-lg-6 mb-3">
                                                 <div class="mb-3">
-                                                    <strong>Tahun</strong>
+                                                    <strong>Tahun Penerapan</strong>
                                                     <br>
                                                     <span class="text-muted">
                                                         {{ $innovation->year_start ?? ''}}
-                                                    </span>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <strong>Status</strong>
-                                                    <br>
-                                                    <span class="text-muted">
-                                                        {{ $innovation->sustainabilityStatus->name ?? ''}}
                                                     </span>
                                                 </div>
                                             </div>
