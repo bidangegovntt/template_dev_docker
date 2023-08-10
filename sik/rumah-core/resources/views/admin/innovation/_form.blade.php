@@ -22,10 +22,18 @@
 
         <div class="mb-4">
             <x-form-widget :form="$form['photo']" label="Foto Utama"></x-form-widget>
+
+			@if(! empty($innovation->photo))
+			<div><a class="link" target="_blank" href="{{ asset('storage/' . $innovation->photo) }}">{{ $innovation->photo}}</a></div>
+			@endif
         </div>
 
         <div class="mb-4">
             <x-form-widget :form="$form['infographics']" label="Infografis"></x-form-widget>
+
+			@if(! empty($innovation->infographics))
+			<div><a class="link" target="_blank" href="{{ asset('storage/' . $innovation->infographics) }}">{{ $innovation->infographics }}</a></div>
+			@endif
         </div>
 
         <div class="mb-4">

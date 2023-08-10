@@ -138,6 +138,7 @@ class InnovationController extends Controller
 
         return view('admin.innovation.create', [
             'form' => $form->createView(),
+			'innovation' => $innovation,
         ]);
     }
 
@@ -258,6 +259,18 @@ class InnovationController extends Controller
 
         $innovationAdmins = $innovationAdmins->get();
 
+		$publishedStatus = $this->getPublishedStatus();
+		$defaultPublishedStatus = '';
+
+		if (! $user->isSuperAdmin()) {
+			$allowedPublishedStatus = ['draft'];
+			$publishedStatus = array_filter($publishedStatus, function($v) use($allowedPublishedStatus) { 
+				return in_array($v, $allowedPublishedStatus);
+			});
+
+			$defaultPublishedStatus = 'draft';
+		}
+
         $form = FormFactory::create(FormType::class, $model)
             ->add('title', TextType::class, [
                 'label' => 'Judul',
@@ -303,7 +316,8 @@ class InnovationController extends Controller
             ])
             ->add('published_status', ChoiceType::class, [
                 'label' => 'Status Publikasi',
-                'choices' => $this->getPublishedStatus(),
+                'choices' => $publishedStatus, 
+				'empty_data' => $model->published_status ?: $defaultPublishedStatus,
             ])
             ->add('achievement', TextType::class, [
                 'label' => 'Achievement',

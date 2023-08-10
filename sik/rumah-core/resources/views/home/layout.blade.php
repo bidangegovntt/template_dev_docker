@@ -219,7 +219,7 @@
     <footer id="footer" class="bg-dark text-light text-center">
         <div class="container py-4">
             <div class="copyright">
-                &copy; Copyright <strong><span>Lopo Inovasi</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Rumah Inovasi</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 Designed by <a href="{{ url('') }}">Lopo Inovasi</a>
