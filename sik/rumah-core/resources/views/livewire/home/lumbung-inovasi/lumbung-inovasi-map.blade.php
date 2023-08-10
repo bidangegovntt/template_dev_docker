@@ -45,7 +45,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="">Kab/Kota</label>
+                                        <label for="">Daerah</label>
                                         <select class="form-select" wire:model.defer="city">
                                             <option value="">-SEMUA-</option>
                                             @foreach ($city_list as $city_item)

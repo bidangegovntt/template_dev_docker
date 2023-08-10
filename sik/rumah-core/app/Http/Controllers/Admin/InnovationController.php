@@ -287,7 +287,7 @@ class InnovationController extends Controller
             ])
             ->add('city_id', ChoiceType::class, [
                 'choices' => City::OrderBy('name')->get()->pluck('id', 'name'),
-                'label' => 'Kota',
+                'label' => 'Daerah',
                 'required' => false,
             ])
             ->add('year_start', ChoiceType::class, [

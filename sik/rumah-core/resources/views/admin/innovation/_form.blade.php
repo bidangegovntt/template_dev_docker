@@ -76,7 +76,7 @@
         </div>
 
         <div class="mb-4">
-            <x-form-widget :form="$form['city_id']" label="Kota"></x-form-widget>
+            <x-form-widget :form="$form['city_id']" label="Daerah"></x-form-widget>
         </div>
 
         <div class="mb-4">

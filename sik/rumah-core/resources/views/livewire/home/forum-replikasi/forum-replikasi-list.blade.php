@@ -114,7 +114,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="">Kab/Kota</label>
+                                        <label for="">Daerah</label>
                                         <select class="form-select" wire:model.defer="city">
                                             <option value="">-SEMUA-</option>
                                             @foreach ($city_list as $city_item)
@@ -185,7 +185,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="">Kab/Kota</label>
+                                <label for="">Daerah</label>
                                 <select class="form-select" wire:model.defer="city">
                                     <option value="">-SEMUA-</option>
                                     @foreach ($city_list as $city_item)
@@ -250,7 +250,7 @@
                                             <h6 class="card-subtitle text-muted">
                                                 <p>Kategori: {{ $innovation_item->category->name }}
                                                     <br>
-                                                    Kota: {{ $innovation_item->city->name }}
+                                                    Daerah: {{ $innovation_item->city->name }}
                                                     <br>
                                                     Tahun: {{ $innovation_item->year_start }}
                                                 </p>
@@ -278,7 +278,7 @@
                                     <h6 class="card-subtitle text-muted">
                                         <p>Kategori: {{ $innovation_item->category_name }}
                                             <br>
-                                            Kota: {{ $innovation_item->city_name }}
+                                            Daerah: {{ $innovation_item->city_name }}
                                             <br>
                                             Tahun: {{ $innovation_item->year_start }}
                                         </p>
