@@ -66,9 +66,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="">Sejarah</a></li>
-                            <li><a href="">Tim Lopo Inovasi</a></li>
-                            <li><a href="">Survey Pengguna</a></li>
+                            <li><a href="{{ route('training-show', 2)}}">Sejarah</a></li>
+                            <li><a href="{{ route('training-show', 3) }}">Tim Lopo Inovasi</a></li>
+                            <li><a href="{{ route('training-show', 4) }}">Survey Pengguna</a></li>
                         </ul>
 {{--
                         <ul>

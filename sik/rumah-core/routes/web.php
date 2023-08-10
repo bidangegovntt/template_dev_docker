@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Route::get('/', [HomeController::class, 'showHome']);
+Route::get('/', [HomeController::class, 'showHome'])->name('home');
 
 Route::get('/lumbung-inovasi', function () {
     return view('home/lumbung-inovasi');
@@ -79,7 +79,7 @@ Route::get('/artikel', function () {
     return view('home/training');
 })->name('training-list');
 
-Route::get('/artikel/{training_id}', [TrainingController::class, 'showTraining'])->name('training-show');
+Route::get('/artikel/{training}', [TrainingController::class, 'showTraining'])->name('training-show');
 
 Route::get('/kunjungan-lapangan', function () {
     return view('home/kunjungan-lapangan');
