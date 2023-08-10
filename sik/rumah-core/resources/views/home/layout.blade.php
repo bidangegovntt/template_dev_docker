@@ -91,7 +91,7 @@
                         <ul>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">Lumbung</a></li>
                             <li><a href="{{ route('forum-replikasi-list') }}">Forum Replikasi</a></li>
-                            <li><a href="{{ route('lumbung-inovasi-map') }}">Peta Inovasi</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-map') }}">Sebaran</a></li>
                         </ul>
 --}}
                     </li>

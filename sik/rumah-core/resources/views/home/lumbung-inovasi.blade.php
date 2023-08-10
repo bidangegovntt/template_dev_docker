@@ -20,7 +20,7 @@
                         <a href="{{ url('lumbung-inovasi-map') }}">
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-map"></i></div>
-                            <h4 class="title">Peta Inovasi</h4>
+                            <h4 class="title">Sebaran</h4>
                         </div>
                         </a>
                     </div>

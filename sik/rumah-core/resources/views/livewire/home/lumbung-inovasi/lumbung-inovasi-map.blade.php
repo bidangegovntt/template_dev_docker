@@ -13,7 +13,7 @@
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Peta Inovasi</h2>
+                <h2>Sebaran</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
                     <li>Direktori</li>
