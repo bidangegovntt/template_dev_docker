@@ -18,9 +18,29 @@ class HotlineController extends Controller
     public function index()
     {
         $innovationMentor = User::role('mentor inovasi')->OrderBy('name')->get();
-        $innovationDoctor = User::role('dokter inovasi')->with(['innovatorOf'])->OrderBy('name')->get();
+        $innovationDoctor = null; // User::role('dokter inovasi')->with(['innovatorOf'])->OrderBy('name')->get();
+		$displayedBlocks['innovationMentor'] = true;
+		$displayedBlocks['innovationDoctor'] = false;
 
-        return view('home.hotline-inovasi.index', compact('innovationMentor', 'innovationDoctor'));
+		$pageTitle = 'Klinik Inovasi';
+
+		return view('home.hotline-inovasi.index', compact(
+			'innovationMentor', 'innovationDoctor', 'displayedBlocks', 'pageTitle'
+		));
+    }
+
+    public function timInkubator()
+    {
+        $innovationMentor = null; 
+        $innovationDoctor = User::role('dokter inovasi')->with(['innovatorOf'])->OrderBy('name')->get();
+		$displayedBlocks['innovationMentor'] = false;
+		$displayedBlocks['innovationDoctor'] = true;
+
+		$pageTitle = 'Tim Inkubator';
+
+		return view('home.hotline-inovasi.index', compact(
+			'innovationMentor', 'innovationDoctor', 'displayedBlocks', 'pageTitle'
+		));
     }
 
     /**

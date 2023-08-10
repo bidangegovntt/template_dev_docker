@@ -1,7 +1,7 @@
 <x-admin-layout>
 
     <x-slot name="page_title">
-        {{ __('Create Training Event') }}
+		{{ "Buat Artikel" }}
     </x-slot>
 
     <x-slot name="content">

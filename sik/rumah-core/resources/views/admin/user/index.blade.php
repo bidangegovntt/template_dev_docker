@@ -30,7 +30,7 @@
                                 <a href="{{ route('admin.user.edit', ['user' => $user]) }}">
                                     <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                                         <x-profile-picture
-                                            src="{{ $user->profile_photo_path ? disk_url($user->profile_photo_path, 'public') : '' }}"
+                                            src="{{ $user->profile_photo_path ? asset('storage/'. $user->profile_photo_path) : '' }}"
                                             alt="{{ $user->name }}" class="w-12 h-12 mr-4"></x-profile-picture>
                                         <div class="flex-grow">
                                             <h2 class="text-gray-900 title-font font-medium">{{ $user->name }}</h2>

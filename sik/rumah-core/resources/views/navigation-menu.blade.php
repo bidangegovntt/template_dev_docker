@@ -69,7 +69,7 @@
 
                                     <x-slot name="content">
                                         <x-jet-dropdown-link href="{{ route('admin.training') }}">
-                                            {{ __('Training') }}
+                                            {{ __('Artikel') }}
                                         </x-jet-dropdown-link>
                                         <x-jet-dropdown-link href="{{ route('admin.fieldtrip') }}">
                                             {{ __('Kunjungan Lapangan') }}

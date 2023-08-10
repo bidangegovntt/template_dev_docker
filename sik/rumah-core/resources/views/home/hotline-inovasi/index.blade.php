@@ -5,7 +5,7 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>Hotline Inovasi</h2>
+                    <h2>{{ $pageTitle }}</h2>
 
                     @auth
                         <a class="btn btn-primary" href="{{ route('hotline-inovasi.my-messages') }}">
@@ -18,6 +18,8 @@
         </section>
         <section id="content" class="pt-4 mt-1">
             <div class="container">
+
+				@if(null !== $displayedBlocks['innovationMentor'] && $displayedBlocks['innovationMentor'])
                 <div class="row mb-5">
                     <div class="col-md-12">
                         <div class="card shadow">
@@ -56,7 +58,10 @@
                         </div>
                     </div>
                 </div>
+				@endif
 
+
+				@if(null !== $displayedBlocks['innovationDoctor'] && $displayedBlocks['innovationDoctor'])
                 <div class="row mb-5">
                     <div class="col-md-12">
                         <div class="card shadow">
@@ -95,6 +100,8 @@
                         </div>
                     </div>
                 </div>
+				@endif
+
                 {{-- <div class="row mb-3">
                     <div class="col-md-12">
                         <div class="section-title pb-1">

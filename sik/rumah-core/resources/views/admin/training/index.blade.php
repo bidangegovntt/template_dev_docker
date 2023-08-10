@@ -1,6 +1,6 @@
 <x-admin-layout>
     <x-slot name="page_title">
-        {{ __('Training Event') }}
+        {{ "Artikel" }}
     </x-slot>
 
     <x-slot name="content">

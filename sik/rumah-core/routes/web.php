@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin as AdminController;
 use App\Http\Controllers\AnalisisController;
 use App\Http\Controllers\HotlineController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ProposalController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -74,11 +75,11 @@ Route::get('/forum-inovasi/{topic_id}', function ($topic_id) {
     ]);
 })->name('forum-inovasi-show-topic');
 
-Route::get('/training', function () {
+Route::get('/artikel', function () {
     return view('home/training');
 })->name('training-list');
 
-Route::get('/training/{training_id}', [TrainingController::class, 'showTraining'])->name('training-show');
+Route::get('/artikel/{training_id}', [TrainingController::class, 'showTraining'])->name('training-show');
 
 Route::get('/kunjungan-lapangan', function () {
     return view('home/kunjungan-lapangan');
@@ -88,6 +89,8 @@ Route::get('/kunjungan-lapangan/{id}', [FieldTripController::class, 'showKunjung
 
 Route::prefix('hotline-inovasi')->group(function () {
     Route::get('/', [HotlineController::class, 'index'])->name('hotline-inovasi');
+    Route::get('/klinik', [HotlineController::class, 'index'])->name('hotline-inovasi-klinik');
+    Route::get('/tim-inkubator', [HotlineController::class, 'timInkubator'])->name('hotline-inovasi-tim-inkubator');
 
     Route::get('/doctor/{innovationDoctor}', [HotlineController::class, 'detail'])
         ->name('hotline-inovasi-detail');
@@ -199,7 +202,7 @@ Route::prefix('/admin')->middleware(['auth'])->middleware(AuthAdmin::class)->gro
         Route::post('delete/{learningMaterial}', [AdminController\KlinikInovasiController::class, 'delete'])->name('admin.klinik-inovasi.delete');
     });
 
-    Route::prefix('training')->group(function () {
+    Route::prefix('artikel')->group(function () {
         Route::get('/', [AdminController\TrainingController::class, 'index'])->name('admin.training');
         Route::get('new', [AdminController\TrainingController::class, 'create'])->name('admin.training.new');
         Route::post('new', [AdminController\TrainingController::class, 'create'])->name('admin.training.create');
@@ -249,3 +252,5 @@ Route::prefix('artisan')->group(function () {
         Artisan::call('db:seed adminInovasiKabupatenProvinsiSeeder');
     });
 });
+
+Route::get('/proposal', [ProposalController::class, 'index'])->name('proposal')->middleware('auth');

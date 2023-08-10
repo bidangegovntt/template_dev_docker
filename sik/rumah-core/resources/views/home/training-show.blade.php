@@ -4,7 +4,7 @@
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Training</h2>
+                <h2>Artikel</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
                     <li>Ruang Tamu</li>
@@ -15,7 +15,7 @@
     <section id="content" class="pt-4">
         <div class="container">
             <a href="{{ route('training-list') }}" class="btn btn-orange mb-3">
-                <i class="fa fa-arrow-alt-circle-left"></i> Kembali ke Training Event
+                <i class="fa fa-arrow-alt-circle-left"></i> Kembali ke Artikel
             </a>
             <div class="card shadow">
                 <div class="card-body">

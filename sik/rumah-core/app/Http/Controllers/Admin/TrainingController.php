@@ -8,12 +8,15 @@ use Barryvdh\Form\CreatesForms;
 use Barryvdh\Form\ValidatesForms;
 use Illuminate\Http\Request;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextAreaType;
 use App\Traits\UploadFormFile;
+use Storage;
 use Barryvdh\Form\Facade\FormFactory;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use App\Helpers\Slugger;
 
 class TrainingController extends Controller
 {
@@ -85,6 +88,13 @@ class TrainingController extends Controller
             //     $trainingFiles[] = $trainingFile;
             // }
 
+            $photo = $this->uploadFileFormTo(
+                $form->get('photo'),
+                Storage::disk('public')->path($training->getPhotoPath())
+            );
+
+            $training->setPhotoFromBasename($photo);
+
             $training->save();
 
             // if ($trainingFiles)
@@ -95,7 +105,7 @@ class TrainingController extends Controller
             return redirect()->back()->withStatus('Training saved');
         }
 
-        return view('admin.training.create', ['form' => $form->createView()]);
+        return view('admin.training.create', ['form' => $form->createView(), 'training' => $training]);
     }
 
     public function edit(Training $training)
@@ -136,6 +146,13 @@ class TrainingController extends Controller
 
             //     $trainingFiles[] = $trainingFile;
             // }
+			
+            $photo = $this->uploadFileFormTo(
+                $form->get('photo'),
+                Storage::disk('public')->path($training->getPhotoPath())
+            );
+
+            $training->setPhotoFromBasename($photo);
 
             $training->save();
 
@@ -152,7 +169,7 @@ class TrainingController extends Controller
 
         return view('admin.training.edit', [
             'form' => $form->createView(),
-            // 'innovation' => $training
+            'training' => $training
         ]);
     }
 
@@ -180,16 +197,22 @@ class TrainingController extends Controller
                 'label' => 'Judul',
                 'rules' => 'required',
             ])
-            ->add('training_date', DateType::class, [
-                'widget' => 'single_text',
-                'format' => 'dd-MM-yyyy',
-                'html5' => false,
-                'label' => 'Tanggal Training',
-                'rules' => 'required',
-                'attr' => [
-                    'readonly' => true
-                ]
+            ->add('photo', FileType::class, [
+                'label' => 'Photo',
+                'data_class' => null,
+                'required' => false,
+                'mapped' => false,
             ])
+            // ->add('training_date', DateType::class, [
+            //     'widget' => 'single_text',
+            //     'format' => 'dd-MM-yyyy',
+            //     'html5' => false,
+            //     'label' => 'Tanggal Training',
+            //     'rules' => 'required',
+            //     'attr' => [
+            //         'readonly' => true
+            //     ]
+            // ])
             ->add('content', TextAreaType::class, [
                 'rules' => 'required',
             ])

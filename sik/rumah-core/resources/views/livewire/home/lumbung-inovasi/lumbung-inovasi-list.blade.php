@@ -95,12 +95,12 @@
                                                             <div
                                                                 class="d-flex align-items-center border-end pe-3 me-3 mb-2">
                                                                 <i class="fa fa-bookmark opacity-70 me-2"></i>
-                                                                <span>{{ $innovation_item->category->name }}</span>
+                                                                <span>{{ $innovation_item->category->name ?? '' }}</span>
                                                             </div>
                                                             <div
                                                                 class="d-flex align-items-center border-end pe-3 me-3 mb-2">
                                                                 <i class="fa fa-city opacity-70 me-2"></i>
-                                                                <span>{{ $innovation_item->city->name }}</span>
+                                                                <span>{{ $innovation_item->city->name ?? '' }}</span>
                                                             </div>
                                                             <div class="d-flex align-items-center mb-2">
                                                                 <i class="fa fa-clock opacity-70 me-2"></i>

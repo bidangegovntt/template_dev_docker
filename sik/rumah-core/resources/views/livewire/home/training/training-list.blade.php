@@ -2,7 +2,7 @@
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Training Event</h2>
+                <h2>Artikel</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
                     <li>Ruang Tamu</li>
@@ -45,7 +45,7 @@
                             <div class="col-12 text-center">
                                 <img src="{{ asset('home/img/no-data.svg') }}" class="img-fluid p-3"
                                     style="height: 200px" alt="">
-                                    <p class="h4">Belum Ada Event Training</p>
+                                    <p class="h4">Belum Ada Event Artikel</p>
                             </div>
                         </div>
                     @endif
