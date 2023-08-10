@@ -4,7 +4,7 @@
     <section id="content" class="services mt-5">
         <div class="container">
             <div class="section-title">
-                <h2>Lumbung Inovasi</h2>
+                <h2>Direktori</h2>
             </div>
             <div class="sidebar">
                 <div class="row">

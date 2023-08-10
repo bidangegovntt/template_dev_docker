@@ -7,7 +7,7 @@
                 <h2>Artikel</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                    <li>Ruang Tamu</li>
+                    <li>Artikel</li>
                 </ol>
             </div>
         </div>
@@ -21,7 +21,11 @@
                 <div class="card-body">
                     <h2 class="border-bottom pb-2 mb-3">{{ $training->title }}</h2>
                     <p class="text-muted mb-3"><i class="fa fa-clock"></i> {{ $training->created_at }}</p>
+					<div class="w-2">
+					</div>
+					<div class="w-6">
                     {!! $training->content !!}
+					</div>
                 </div>
             </div>
         </div>

@@ -2,10 +2,10 @@
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Lumbung Inovasi</h2>
+                <h2>Direktori</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                    <li>Dapur Inovasi</li>
+                    <li>Direktori</li>
                 </ol>
             </div>
         </div>

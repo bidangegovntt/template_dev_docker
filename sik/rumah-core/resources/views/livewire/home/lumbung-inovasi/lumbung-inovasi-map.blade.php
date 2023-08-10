@@ -16,7 +16,7 @@
                 <h2>Peta Inovasi</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                    <li>Dapur Inovasi</li>
+                    <li>Direktori</li>
                 </ol>
             </div>
         </div>
