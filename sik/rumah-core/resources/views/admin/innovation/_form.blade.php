@@ -190,8 +190,8 @@
 <script src="{{ asset('home/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/leaflet-location-picker/leaflet-locationpicker.min.js') }}"></script>
 @php
-$latitude = env('MAP_CENTER_POINT_LAT', -9.2406129);
-$longitude = env('MAP_CENTER_POINT_LAT', 122.8742191);
+$latitude = (float) env('MAP_CENTER_POINT_LAT', -9.2406129);
+$longitude = (float) env('MAP_CENTER_POINT_LNG', 122.8742191);
 $zoom = env('MAP_CENTER_POINT_ZOOM', 6);
 
 
