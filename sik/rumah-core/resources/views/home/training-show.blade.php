@@ -23,7 +23,7 @@
                     <p class="text-muted mb-3"><i class="fa fa-clock"></i> {{ $training->created_at }}</p>
 					<div class="row">
 						<div class="col-md-3 px-2">
-							<div class="card" style="width: 18rem;">
+							<div class="card">
 								@if($training->photo)
 								<a href="{{ asset('storage/' . $training->photo )}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
 									<figure class="figure shadow bg-white">
