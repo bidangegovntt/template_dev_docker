@@ -18,7 +18,7 @@
             </div>
               <div class="row">
                 <div class="col-12">
-                  <form id="SignupForm" method="POST" action="<? //= base_url('kovablik/form/add') ?>">
+                  <form id="SignupForm" method="POST" action="">
                   <!--
                     <fieldset>
                       <legend>Syarat & Ketentuan yang berlaku</legend>
@@ -164,7 +164,7 @@
 
                       <div class="col-md-12">
                         <label><strong>Tanggal dimulai implementasi Inovasi</strong></label>
-                        <input type="date" name="tanggal_mulai" class="date form-control">
+                        <input type="text" name="tanggal_mulai" class="date form-control">
                       </div>
 
 <!--
@@ -1084,19 +1084,17 @@
   </div>
 </section>
 
-<script type="text/javascript">
-    $('.date').datepicker({  
-       format: 'mm-dd-yyyy'
-     });  
-</script> 
-
 <script>
     $(document).ready(function() {
-		$('.datepick2').datetimepicker({
-			timepicker: false,
-			format: 'd-m-Y',
-			formatDate: 'Y-m-d'
-		});
+		// $('.datepick2').datetimepicker({
+		// 	timepicker: false,
+		// 	format: 'd-m-Y',
+		// 	formatDate: 'Y-m-d'
+		// });
+		$('.date').datepicker({  
+		   format: 'mm-dd-yyyy'
+		 });  
+	});
 
 </script>
 <script src="rumahinovasi/js/bootstrap-datepicker.js"></script>

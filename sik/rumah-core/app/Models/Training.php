@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Helpers\Slugger;
+use Purify;
 
 class Training extends Model
 {
@@ -47,4 +48,10 @@ class Training extends Model
 
         return $this;
     }
+
+	public function purifyContent()
+	{
+		return Purify::config(['HTML.Allowed' => 'p,b,i,strong,em,span,div'])
+			->clean($this->content);
+	}
 }

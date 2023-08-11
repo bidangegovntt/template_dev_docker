@@ -260,3 +260,4 @@ Route::prefix('artisan')->group(function () {
 });
 
 Route::get('/proposal', [ProposalController::class, 'index'])->name('proposal')->middleware('auth');
+Route::post('/proposal', [ProposalController::class, 'index'])->name('proposal.store')->middleware('auth');
