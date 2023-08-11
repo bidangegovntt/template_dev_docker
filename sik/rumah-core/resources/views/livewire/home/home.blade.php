@@ -171,6 +171,8 @@
         </div>
     </section>
 
+	@include('home._info-terbaru', ['showTitle' => true, 'textTitle' => 'Info <strong>Terbaru</strong>'])
+
 	@include('home._inovasi-map', ['showTitle' => true, 'textTitle' => 'Sebaran <strong>Inovasi</strong>'])
 
     <section id="portfolio" class="portfolio">
