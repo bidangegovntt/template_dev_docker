@@ -73,6 +73,15 @@
         focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out
         duration-150 text-normal']])
     </div>
+
+    <div class="w-full sm:w-full md:w-full lg:w-2/6 mb-4 lg:mr-4">
+		@if ($training->photo)
+		<img src="{{ asset('storage/' . $training->photo) }}"
+			class="shadow rounded max-w-full h-auto align-middle border-none mb-3"
+			alt="foto-fitur" style="max-height: 200px"/>
+		@endif
+	</div>
+	
 </div>
 
 @formEnd($form)
