@@ -87,10 +87,11 @@
                         $array_faq = [
                             [
                                 'title' => 'Selamat datang di Lopo Inovasi Flobamorata',
-                                'content' => '<p>Lopo Inovasi Flobamorata adalah platform yang menyediakan informasi dan pengetahuan terkait inovasi pelayanan publik penyelenggaraan pemerintahan, pelaksanaan pembangunan dan pemberdayaan masyarakat di Provinsi Nusa Tenggara Timur. Platform ini dikembangkan pada Tahun 2022, dikelola oleh Pemerintah Provinsi Nusa Tenggara Timur.</p>
-<p>Lopo Inovasi Flobamorata  berfungsi sebagai tempat untuk pendaftaran, penilaian dan juga pembinaan dan evaluasi dan pendokumentasian inovasi yang telah teruji, serta memiliki dampak positif yang signifikan bagi masyarakat atau pengguna pelayanan.</p>
+								'content' => '
+<p>Lopo Inovasi Flobamorata adalah platform yang menyediakan informasi dan pengetahuan terkait inovasi pelayanan publik penyelenggaraan pemerintahan, pelaksanaan pembangunan dan pemberdayaan masyarakat di Provinsi Nusa Tenggara Timur. Platform ini dikembangkan pada Tahun 2022, dikelola oleh Pemerintah Provinsi Nusa Tenggara Timur.</p>
+<p>Lopo Inovasi Flobamorata  berfungsi sebagai tempat untuk pendaftaran, penilaian dan juga pembinaan dan evaluasi dan pendokumentasian inovasi yang telah teruji, serta memiliki dampak positif yang signifikan bagi masyarakat atau pengguna pelayanan. </p>
 <p>Lopo Inovasi Flobamorata juga menyediakan forum replikasi yang memungkinkan para pelaku inovasi, utamanya inovator dan calon inovator untuk berdiskusi dan bertukar pengetahuan dalam pengembangan inovasi pelayanan publik. </p>
-<p>Lopo Inovasi Flobamorata juga menjadi semacam repositori yang memiliki kompleksitas data inovasi yang relatif komprehensif. Sehingga direktori inovasi yang ada di platform ini bisa digunakan sebagai manajemen pengetahuan (<i>Knowledge Management</i>) untuk pengembangan inovasi. Selamat menjelajahi Lopo Inovasi Flobamorata, selamat berinovasi!</p>',
+<p>Lopo Inovasi Flobamorata juga merupakan repositori yang memiliki kompleksitas data inovasi yang relatif komprehensif. Sehingga direktori inovasi yang ada di platform ini bisa digunakan sebagai manajemen pengetahuan (<i>Knowledge Management</i>) untuk pengembangan inovasi. Selamat menjelajahi Lopo Inovasi Flobamorata, selamat berinovasi!</p>',
                             ],
                         ];
                     @endphp
