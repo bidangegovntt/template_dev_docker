@@ -21,7 +21,7 @@
 				@endphp
 				<div class="row portfolio-item text-center">
 					<div class="col-3">
-						<div class="card" style="width: 18rem;">
+						<div class="card">
 							<a href="{{ route('training-show', $training) }}">
 								<img src="{{ asset($photo) }}" class="w-100 img-fluid shadow" alt=""
 									style="background-size: cover;">
