@@ -26,5 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         // Paginator::useBootstrap();
+		// TODO: conffigurable
+		\Illuminate\Support\Facades\URL::forceScheme('https');
     }
 }
