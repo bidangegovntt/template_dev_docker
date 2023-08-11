@@ -85,7 +85,7 @@
                         <ul>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">Sinovik</a></li>
                             <li><a href="{{ route('lumbung-inovasi-list') }}">IGA</a></li>
-                            <li><a href="{{ route('lumbung-inovasi-list') }}">KOIN YANLIK</a></li>
+                            <li><a href="{{ route('lumbung-inovasi-list') }}">KOIN-YANLIK</a></li>
                         </ul>
 {{--
                         <ul>
