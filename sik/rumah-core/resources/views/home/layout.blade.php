@@ -130,10 +130,10 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="">Berita Kegiatan</a></li>
-                            <li><a href="">Pengumuman</a></li>
-                            <li><a href="">Regulasi</a></li>
-                            <li><a href="">Referensi</a></li>
+                            <li><a href="{{ url('/artikel/cat/berita-kegiatan') }}">Berita Kegiatan</a></li>
+                            <li><a href="{{ url('/artikel/cat/pengumuman') }}">Pengumuman</a></li>
+                            <li><a href="{{ url('/artikel/cat/regulasi') }}">Regulasi</a></li>
+                            <li><a href="{{ url('/artikel/cat/referensi') }}">Referensi</a></li>
                         </ul>
                     </li>
                     @guest

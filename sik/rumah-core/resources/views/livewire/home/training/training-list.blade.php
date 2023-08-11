@@ -18,15 +18,35 @@
                         <ul class="list-group list-group-flush mb-4">
                             @foreach ($training_list as $training)
                                 <li class="list-group-item">
-                                    <a href="{{ route('training-show', ['training' => $training]) }}">
-                                        <h5 class="card-title">{{ $training->title }}</h5>
-                                    </a>
+									<div class="row">
+										<div class="col-xs-12 col-md-3">
+											<div class="card" style="width: 18rem;">
+												@if ($training->photo)
+													<div alt="{{ $training->title }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
+														<figure class="figure shadow bg-white">
+															<img class="card-img-top img-fluid shadow aos-init aos-animate" src="{{ asset('storage/'. $training->photo) }}" alt="{{ $training->title }}" data-aos="fade-up"/>
+														</figure>
+													</div>
+												@endif
+											</div>
+										</div>
+										<div class="col-xs-12 col-md-9">
+											<a href="{{ route('training-show', ['training' => $training]) }}">
+												<h5 class="card-title">{{ $training->title }}</h5>
+											</a>
 
-									<div>
-                                            {!! substr(Purify::config(['HTML.Allowed' => 'p,b,i,strong,em,span,div'])->clean($training->content), 0, 300) !!}
+											<div class="row">
+												<div class="col">
+													{!! substr(Purify::config(['HTML.Allowed' => 'p,b,i,strong,em,span,div'])->clean($training->content), 0, 300) !!}
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<p class="card-text text-muted"><i class="fa fa-clock"></i> {{ $training->created_time }}</p>
+												</div>
+											</div>
+										</div>
 									</div>
-                                    <p class="card-text text-muted"><i class="fa fa-clock"></i>
-                                        {{ $training->created_time }}</p>
                                 </li>
                             @endforeach
                         </ul>
