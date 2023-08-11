@@ -221,23 +221,21 @@
 
             <div class="row" data-aos="fade-up">
 
-                <div class="col-3 mx-auto mb-3">
+				@foreach([
+					'home/img/kemendagri.jpeg',
+					'home/img/panrb.jpeg',
+					'home/img/logo-pemprov-jatim.jpg',
+					'home/img/usaid.jpg',
+				] as $img_path)
+                <div class="col-2 mx-auto">
                     <div class="card shadow">
                         <div class="card-body text-center">
-                            <img src="{{ asset('home/img/logo-pemprov-jatim.jpg') }}" class="img-fluid" alt=""
+                            <img src="{{ asset($img_path) }}" class="img-fluid" alt=""
                                 style="height: 120px; border-radius: 0px !important">
                         </div>
                     </div>
                 </div>
-
-                <div class="col-3 mx-auto mb-3">
-                    <div class="card shadow">
-                        <div class="card-body text-center">
-                            <img src="{{ asset('home/img/usaid.jpg') }}" class="img-fluid" alt=""
-                                style="height: 120px; border-radius: 0px !important">
-                        </div>
-                    </div>
-                </div>
+				@endforeach
 
             </div>
         </div>

@@ -102,6 +102,7 @@
                         </a>
                         <ul>
                             <li><a href="{{ route('proposal') }}">KOIN-YANLIK</a></li>
+                            <li><a href="{{ route('training-show', 6) }}">Panduan KOIN-YANLIK</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

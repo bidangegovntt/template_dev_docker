@@ -22,7 +22,7 @@
                     <h2 class="border-bottom pb-2 mb-3">{{ $training->title }}</h2>
                     <p class="text-muted mb-3"><i class="fa fa-clock"></i> {{ $training->created_at }}</p>
 					<div class="row">
-						<div class="col-md-3 p-2">
+						<div class="col-md-3 px-2">
 							<div class="card" style="width: 18rem;">
 								@if($training->photo)
 								<a href="{{ asset('storage/' . $training->photo )}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
@@ -33,7 +33,7 @@
 								@endif
 							</div>
 						</div>
-						<div class="col-md-9 p-2">
+						<div class="col-md-9 px-2">
 						{!! trim($training->content) !!}
 						</div>
 					</div>

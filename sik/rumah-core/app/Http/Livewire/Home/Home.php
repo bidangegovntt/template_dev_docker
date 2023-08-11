@@ -13,9 +13,10 @@ class Home extends Component
 {
     public function render()
     {
-        $innovations = Innovation::latest('year_start')->latest('id')->limit(6)->get();
+        $innovations = Innovation::latest('year_start')->published()->latest('id')->limit(6)->get();
         $trainings = Training::latest('id')->limit(5)->get();
         $fieldTrips = FieldTrip::latest('id')->limit(5)->get();
+		$infoTerbaru = Training::latest('created_at')->limit(2)->get();
 
 		$centerPoint = new \stdClass;
 		$centerPoint->lat = env('MAP_CENTER_POINT_LAT', -9.2406129);
@@ -29,6 +30,7 @@ class Home extends Component
 			'category_list' => InnovationCategory::all(),
 			'city_list' => City::all(),
 			'centerPoint' => $centerPoint,
+			'infoTerbaru' => $infoTerbaru,
         ]);
     }
 }
