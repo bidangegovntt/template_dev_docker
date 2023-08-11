@@ -80,7 +80,7 @@ Route::get('/artikel', function () {
 })->name('training-list');
 
 Route::get('/artikel/{training}', [TrainingController::class, 'showTraining'])->name('training-show');
-Route::get('/artikel/cat/{trainingCategory:slug}', [TrainingController::class, 'showCategoryTraining'])->name('training-show-category');
+Route::get('/artikel/cat/{slug}', [TrainingController::class, 'showCategoryTraining'])->name('training-show-category');
 
 Route::get('/kunjungan-lapangan', function () {
     return view('home/kunjungan-lapangan');
