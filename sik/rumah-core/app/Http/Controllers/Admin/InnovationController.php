@@ -45,10 +45,46 @@ class InnovationController extends Controller
     public function index(Request $request)
     {
         $search = $request->query('search');
+		$_form = $request->query('form');
 
         $innovations = Innovation::latest();
 
         $user = Auth::user();
+// dd(array_merge(['' => 'semua'], $this->getPublishedStatus()));
+        $filterForm = FormFactory::create(FormType::class, null)
+            ->add('title', TextType::class, [
+                'label' => '',
+				'label_attr' => [
+					'class' => 'hidden'
+				],
+				'required' => false,
+				'data' => @$_form['title'] ?: '',
+				'attr' => [
+					'placeholder' => 'ketik pencarian disini...'
+				]
+            ])
+            ->add('published_status', ChoiceType::class, [
+                'label' => '',
+				'label_attr' => [
+					'class' => 'hidden'
+				],
+				'required' => false,
+                'choices' => array_merge(["semua status" => ''], $this->getPublishedStatus()),
+				'data' => @$_form['published_status'] ?: '',
+			])
+            ->add('save', SubmitType::class, [
+				'label' => 'Cari',
+				'attr' => [
+					'class' => 'btn'
+				]
+            ])
+			;
+
+		$filterForm->handleRequest();
+
+		$publishedStatus = '';
+		$search = @$_form['title'] ?: '';
+		$publishedStatus = @$_form['published_status'] ?: '';
 
         if ($search) {
             $search = str_replace(' ', '%', $search);
@@ -58,6 +94,10 @@ class InnovationController extends Controller
                 $query->orWhere('description', 'like', '%' . $search . '%');
             });
         }
+
+		if ($publishedStatus) {
+			$innovations->where('published_status', $publishedStatus);
+		}
 
         if ($user->hasRole('admin inovasi')) {
             $innovations->where(function ($query) use ($user) {
@@ -71,8 +111,9 @@ class InnovationController extends Controller
         }
 
         $innovations = $innovations->paginate($this->perPage);
+		$form = $filterForm->createView();
 
-        return view('admin.innovation.index', compact('innovations'));
+        return view('admin.innovation.index', compact('innovations', 'form'));
     }
 
     public function show(Innovation $innovation)
@@ -287,7 +328,7 @@ class InnovationController extends Controller
             ])
             ->add('city_id', ChoiceType::class, [
                 'choices' => City::OrderBy('name')->get()->pluck('id', 'name'),
-                'label' => 'Kota',
+                'label' => 'Daerah',
                 'required' => false,
             ])
             ->add('year_start', ChoiceType::class, [
@@ -390,4 +431,10 @@ class InnovationController extends Controller
 
         return $form;
     }
+}
+
+class FilterDto
+{
+	public $title;
+	public $published_status;
 }

@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Training;
+use App\Models\TrainingCategory;
 use Barryvdh\Form\CreatesForms;
 use Barryvdh\Form\ValidatesForms;
 use Illuminate\Http\Request;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -215,6 +217,11 @@ class TrainingController extends Controller
             // ])
             ->add('content', TextAreaType::class, [
                 'rules' => 'required',
+            ])
+            ->add('training_category_id', ChoiceType::class, [
+                'label' => 'Kategori',
+                'choices' => TrainingCategory::all()->pluck('id', 'name'),
+                'required' => false,
             ])
             // ->add('description', TextAreaType::class, [
             //     'rules' => 'required',

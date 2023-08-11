@@ -4,7 +4,7 @@
     <section id="content" class="services mt-5">
         <div class="container">
             <div class="section-title">
-                <h2>Lumbung Inovasi</h2>
+                <h2>Direktori</h2>
             </div>
             <div class="sidebar">
                 <div class="row">
@@ -20,7 +20,7 @@
                         <a href="{{ url('lumbung-inovasi-map') }}">
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-map"></i></div>
-                            <h4 class="title">Peta Inovasi</h4>
+                            <h4 class="title">Sebaran</h4>
                         </div>
                         </a>
                     </div>

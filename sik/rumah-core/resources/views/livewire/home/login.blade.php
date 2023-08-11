@@ -57,9 +57,11 @@
                                     <div class="col-6">
                                         <button class="btn btn-primary mr-2" type="submit">Login</button>
                                     </div>
+									@if (env('USER_REGISTRATION_ALLOWED', 0))
                                     <div class="col-6 text-end">
                                         <a href="{{ route('home-register') }}">Daftar</a>
                                     </div>
+									@endif
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">

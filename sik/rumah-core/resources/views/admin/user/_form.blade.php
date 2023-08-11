@@ -27,6 +27,10 @@
         <div class="relative mb-4">
             <x-form-widget :form="$form['description']" label="Bio data"></x-form-widget>
         </div>
+
+        <div class="relative mb-4">
+            <x-form-widget :form="$form['is_disabled']" label="Aktif?"></x-form-widget>
+        </div>
     </div>
 
     <div class="lg:w-1/3 md:w-1/2 sm:mr-10 rounded-sm relative">

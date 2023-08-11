@@ -5,12 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Helpers\Slugger;
 
 class Training extends Model
 {
     use HasFactory, SoftDeletes;
 
     private $photoPath = 'training_files';
+
+	public function trainingCategory()
+	{
+		return $this->hasOne(TrainingCategory::class);
+	}
 
     public function __toString()
     {

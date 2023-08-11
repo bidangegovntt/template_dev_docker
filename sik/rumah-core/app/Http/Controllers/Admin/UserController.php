@@ -12,6 +12,7 @@ use FormFactory;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -72,6 +73,13 @@ class UserController extends Controller
                 $user->setPasswordFromPlain($password);
             }
 
+			$is_disabled = $form->get('is_disabled')->getData();
+			if ($is_disabled) {
+				$user->markNonActive();
+			} else {
+				$user->markActive();
+			}
+
             $roles = Role::find($form->get('roles')->getData());
             $user->assignRole($roles);
 
@@ -93,6 +101,9 @@ class UserController extends Controller
         $form = $this->buildUserForm($user);
         $form->get('roles')->setData($user->roles->pluck('id')->toArray());
 
+		// dd($user->toArray());
+		$form->get('is_disabled')->setData(! $user->isActive());
+
         $form->handleRequest();
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -100,6 +111,13 @@ class UserController extends Controller
             if ($password = $form->get('password')->getData()) {
                 $user->setPasswordFromPlain($password);
             }
+
+			$is_disabled = $form->get('is_disabled')->getData();
+			if ($is_disabled) {
+				$user->markNonActive();
+			} else {
+				$user->markActive();
+			}
 
             $roles = Role::find($form->get('roles')->getData());
             $user->roles()->detach();
@@ -133,7 +151,17 @@ class UserController extends Controller
             ])
             ->add('instance_name', TextType::class, [
                 'required' => false,
-            ]);
+            ])
+            ->add('is_disabled', ChoiceType::class, [
+				'label'    => 'Aktif?',
+				'choices' => [
+					'Aktif' => false,
+					'Non Aktif' => true,
+				],
+                'required' => true,
+				'mapped' => false,
+			])
+			;
 
 		$user = Auth::user();
 		$allowedRoles = [];

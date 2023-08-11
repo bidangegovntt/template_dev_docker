@@ -5,7 +5,7 @@
                 <h2>Artikel</h2>
                 <ol>
                     <li><a href="{{ url('') }}" class="fw-bold">Beranda</a></li>
-                    <li>Ruang Tamu</li>
+                    <li>Artikel</li>
                 </ol>
             </div>
         </div>
@@ -18,9 +18,13 @@
                         <ul class="list-group list-group-flush mb-4">
                             @foreach ($training_list as $training)
                                 <li class="list-group-item">
-                                    <a href="{{ route('training-show', ['training_id' => $training->id]) }}">
+                                    <a href="{{ route('training-show', ['training' => $training]) }}">
                                         <h5 class="card-title">{{ $training->title }}</h5>
                                     </a>
+
+									<div>
+                                            {!! substr(Purify::config(['HTML.Allowed' => 'p,b,i,strong,em,span,div'])->clean($training->content), 0, 300) !!}
+									</div>
                                     <p class="card-text text-muted"><i class="fa fa-clock"></i>
                                         {{ $training->created_time }}</p>
                                 </li>
