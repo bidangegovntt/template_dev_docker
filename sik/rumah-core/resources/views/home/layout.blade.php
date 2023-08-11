@@ -171,7 +171,7 @@
                                 <span><img src="{{ $profpic }}" class="rounded-circle" style="width: 34px"></span>
                                 <i class="bi bi-chevron-down"></i>
                             </a>
-                            <ul>
+                            <ul class="usermenu">
                                 <li class="text-muted px-3">{{ auth()->user()->name }}</li>
                                 <li><a href="{{ route('my-profile') }}">Profilku</a></li>
                                 <hr class="mx-3 my-0">
@@ -260,6 +260,13 @@
     @yield('plugin-js')
 
     @livewireScripts
+
+	<style>
+		.navbar .dropdown .usermenu {
+			right: 14px;
+			left: auto;
+		}
+	</style>
 
 </body>
 
