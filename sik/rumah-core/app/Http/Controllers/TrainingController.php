@@ -15,11 +15,13 @@ class TrainingController extends Controller
         ]);
     }
 
-	public function showCategoryTraining(TrainingCategory $trainingCategory)
+	public function showCategoryTraining($slug)
 	{
+		$trainingCategory = TrainingCategory::where('slug', $slug)->firstOrFail();
+
 		$training = $trainingCategory->training()->paginate();
 
-        return view('home.training', [
+        return view('home.training-list', [
             'training_list' => $training,
         ]);
 	}
