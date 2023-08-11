@@ -34,7 +34,7 @@
 								<h4>{{ $training->title }}</h4>
 							</div>
 							<div class='col-12'>
-								{!! substr($training->purifyContent(), 200) !!}
+								{!! substr($training->purifyContent(), 0, 300) !!}
 							</div>
 							<div class='col-12'>
 								<a class="btn btn-sm btn-primary" href="{{ route('training-show', $training) }}">
