@@ -98,9 +98,8 @@
 <script src="{{ asset('home/vendor/leaflet/jquery.min.js') }}"></script>
 <script>
 	var innovationRoute = "{{ route('list-inovasi') }}";
-
 	var map = L.map('map');
-	map.setView({{ json_encode([$centerPoint->lat, $centerPoint->lng]) }}, {{ $centerPoint->zoomLevel }}); // jawatimur
+	map.setView({{ json_encode([(float) $centerPoint->lat, (float)$centerPoint->lng]) }}, {{ $centerPoint->zoomLevel }}); // jawatimur
 
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

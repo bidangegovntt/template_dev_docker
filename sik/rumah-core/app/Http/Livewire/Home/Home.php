@@ -21,8 +21,8 @@ class Home extends Component
 			->training()->latest('created_at')->limit(2)->get();
 
 		$centerPoint = new \stdClass;
-		$centerPoint->lat = env('MAP_CENTER_POINT_LAT', -9.2406129);
-		$centerPoint->lng = env('MAP_CENTER_POINT_LAT', 122.8742191);;
+		$centerPoint->lat = (float) env('MAP_CENTER_POINT_LAT', -9.2406129);
+		$centerPoint->lng = (float) env('MAP_CENTER_POINT_LNG', 122.8742191);;
 		$centerPoint->zoomLevel = env('MAP_CENTER_POINT_ZOOM', 7);
 
         return view('livewire.home.home', [
