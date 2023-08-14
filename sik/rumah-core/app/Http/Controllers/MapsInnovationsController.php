@@ -14,7 +14,7 @@ class MapsInnovationsController extends Controller
     {
 		$centerPoint = new \stdClass;
 		$centerPoint->lat = (float) env('MAP_CENTER_POINT_LAT', -9.2406129);
-		$centerPoint->lng = (float) env('MAP_CENTER_POINT_LAT', 122.8742191);;
+		$centerPoint->lng = (float) env('MAP_CENTER_POINT_LNG', 122.8742191);;
 		$centerPoint->zoomLevel = env('MAP_CENTER_POINT_ZOOM', 7);
 
         $categories = $this->category_count();

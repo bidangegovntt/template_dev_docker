@@ -20,7 +20,7 @@
 					}
 				@endphp
 				<div class="row portfolio-item text-center">
-					<div class="col-3">
+					<div class="col-lg-3 col-md-6">
 						<div class="card">
 							<a href="{{ route('training-show', $training) }}">
 								<img src="{{ asset($photo) }}" class="w-100 img-fluid shadow" alt=""
@@ -28,7 +28,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-9">
+					<div class="col-lg-9 col-md-6">
 						<div class="row portfolio-info" style="text-align: left">
 							<div class='col-12'>
 								<h4>{{ $training->title }}</h4>

@@ -1,6 +1,6 @@
 <div>
     {{-- <section class="services">
-        <div class="container">
+       <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Ruang <strong>Tamu</strong></h2>
             </div>
@@ -228,7 +228,8 @@
 					'home/img/logo-pemprov-jatim.jpg',
 					'home/img/usaid.jpg',
 				] as $img_path)
-                <div class="col-2 mx-auto">
+
+                <div class="col-md-4 col-lg-3 mx-auto mb-3">
                     <div class="card shadow">
                         <div class="card-body text-center">
                             <img src="{{ asset($img_path) }}" class="img-fluid" alt=""
