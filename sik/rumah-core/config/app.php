@@ -180,6 +180,7 @@ return [
         Barryvdh\Form\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         App\Providers\CustomFormServiceProvider::class,
+		Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -236,6 +237,7 @@ return [
         // 'Redis' => Illuminate\Support\Facades\Redis::class,
         'FormFactory' => Barryvdh\Form\Facade\FormFactory::class,
         'FormRenderer' => Barryvdh\Form\Facade\FormRenderer::class,
+		'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];
