@@ -101,7 +101,7 @@
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a href="{{ route('proposal') }}">KOIN-YANLIK</a></li>
+                            <li><a href="{{ route('proposal.index') }}">KOIN-YANLIK</a></li>
                             <li><a href="{{ route('training-show', 6) }}">Panduan KOIN-YANLIK</a></li>
                         </ul>
                     </li>

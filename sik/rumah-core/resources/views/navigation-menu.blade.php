@@ -18,7 +18,7 @@
 
                     @role('super admin')
                         @php
-                            $menus = [['name' => 'Beranda Admin', 'routeName' => 'admin.home'], ['name' => 'Inovasi', 'routeName' => 'admin.innovation'], ['name' => 'Pengguna', 'routeName' => 'admin.user'], ['name' => 'Klinik Inovasi', 'routeName' => 'admin.klinik-inovasi']];
+                            $menus = [['name' => 'Beranda Admin', 'routeName' => 'admin.home'], ['name' => 'Inovasi', 'routeName' => 'admin.innovation'], ['name' => 'Pengguna', 'routeName' => 'admin.user'], ['name' => 'Klinik Inovasi', 'routeName' => 'admin.klinik-inovasi'], ['name' => 'Proposal', 'routeName' => 'admin.proposal']];
                         @endphp
                     @endrole
 

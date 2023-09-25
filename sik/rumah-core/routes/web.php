@@ -227,6 +227,11 @@ Route::prefix('/admin')->middleware(['auth'])->middleware(AuthAdmin::class)->gro
         Route::get('/analytic', [AdminController\SettingAnalyticController::class, 'google'])->name('admin.setting.analytic.google');
 
 	});
+
+	Route::prefix('proposal')->group(function() {
+		Route::get('/', [AdminController\ProposalController::class, 'index'])->name('admin.proposal');
+		Route::get('/proposal/export/excel', [AdminController\ProposalController::class, 'exportExcel'])->name('admin.proposal.export.excel');
+	});
 });
 
 Route::get('/analisis-inovasi', [AnalisisController::class, 'show'])->name('analisis-inovasi');
@@ -259,5 +264,7 @@ Route::prefix('artisan')->group(function () {
     });
 });
 
-Route::get('/proposal', [ProposalController::class, 'index'])->name('proposal')->middleware('auth');
-Route::post('/proposal', [ProposalController::class, 'index'])->name('proposal.store')->middleware('auth');
+Route::get('/submit-proposal', [ProposalController::class, 'create'])->name('proposal.index')->middleware('auth');
+Route::post('/submit-proposal', [ProposalController::class, 'store'])->name('proposal.store')->middleware('auth');
+// Route::resource('proposal', ProposalController::class)->middleware('auth');
+// Route::get('submit-proposal', [ProposalController::class, 'create'])->middleware('auth')->name('proposal.submit');
