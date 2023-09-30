@@ -26,20 +26,21 @@ class ProposalController extends Controller
 		$this->authorize('super admin');
 
 		$q = $request->input('q');
-		$propo = Proposal::latest();
+		// $propo = Proposal::latest();
 
-		if ($q) {
-			$propo->where('judul_proposal', 'like', '%' . $q . '%');
-		}
+		// if ($q) {
+		// 	$propo->where('judul_proposal', 'like', '%' . $q . '%');
+		// }
 			
-		$propo = $propo->paginate($this->defaultPagination);
+		// $propo = $propo->paginate($this->defaultPagination);
 /*
         return view ('propo.index',compact('propo'))->with('i', (request()->input('page', 1) -1) * 5);
 */
         // mengambil dari tabel kategori
-		// $propo = DB::table('kategori') 
-		// 		->join('proposals', 'proposals.id_kategori', '=', 'kategori.id')
-		// 		->paginate();
+		 $propo = DB::table('proposals') 
+		 		->join('kategories', 'proposals.id_kategori', '=', 'kategories.id')
+                ->where('judul_proposal', 'like', '%' . $q . '%')
+		 		->paginate($this->defaultPagination);
 
 		//tampilkan view barang dan kirim datanya ke view tersebut
 		return view('/proposal/index')->with('propo', $propo);
