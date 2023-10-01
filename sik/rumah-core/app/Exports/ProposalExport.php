@@ -198,7 +198,7 @@ class ProposalExport implements FromCollection,WithHeadings
             $data->path_u_keberlanjutan = $data->path_u_keberlanjutan ? asset($data->path_u_keberlanjutan):'';
             $data->created_at = $data->created_at;
             $data->updated_at = $data->updated_at;
-            $data->created_by = $nm_user->name;
+            $data->created_by = $nm_user ? $nm_user->name : '';
         
             return $data;
 		});

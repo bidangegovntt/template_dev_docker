@@ -32,7 +32,7 @@
 					  <th scope="col" class="px-4 py-4">Judul Proposal</th>
 					  <th scope="col" class="px-4 py-4">Kelompok</th>
 					  <th scope="col" class="px-4 py-4">Kategori</th>
-					  <th scope="col" class="px-4 py-4">Nama File</th>
+					  <th scope="col" class="px-4 py-4">Instansi</th>
 					  <th scope="col" class="px-4 py-4"></th>
 					</tr>
 				  </thead>
@@ -47,7 +47,10 @@
 							</td>
 							<td class="whitespace-nowrap px-4 py-4">{{ $proposal->kelompok }}</td>
 							<td class="whitespace-nowrap px-4 py-4">{{ $proposal->kategori ? $proposal->kategori->cat_name : '' }}</td>
-							<td class="whitespace-nowrap px-4 py-4"><a href="{{ asset('storage/'.$proposal->path_up_implementasi) }}" target="_blank">&nbsp;{{ $proposal->path_up_implementasi }}</a></i></td>
+							<td class="whitespace-nowrap px-4 py-4">
+								{{ $proposal->creator ? $proposal->creator->instance_name : '' }}
+								{{ $proposal->creator && $proposal->creator->city ? $proposal->creator->city->name :  ''}}
+							</td>
 							<td class="whitespace-nowrap px-4 py-4">
 								<a href="{{ route('proposal.show', $proposal) }}">
 									<x-show-button>Show</x-show-button>
