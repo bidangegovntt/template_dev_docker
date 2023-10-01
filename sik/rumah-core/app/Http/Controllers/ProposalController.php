@@ -282,7 +282,7 @@ $input['id_kategori'] = $request->input('id_kategori');
 //dd($input);
 
     $proposal = Proposal::make($input);
-	$proposal->created_by = Auth::use()->id;
+	$proposal->created_by = auth()->user()->id;
 
 	$result = $proposal->save();
 
@@ -383,6 +383,14 @@ return redirect(route('proposal.index'))->with('success','Data submited successf
      */
     public function show(Proposal $proposal)
     {
+		$user = auth()->user();
+
+		abort_if(! $user->hasRole(['super admin', 'admin inovasi']), 403);
+
+		if ($user->hasRole('admin inovasi') && ! $user->hasRole('super admin')) {
+			abort_if($proposal->created_by != $user->id, 401);
+		}
+
 		$proposal->load(['kategori',  'creator.city']);
 
 		return view('proposal.show', compact('proposal'));

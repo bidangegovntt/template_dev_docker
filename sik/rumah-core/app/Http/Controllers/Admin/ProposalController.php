@@ -22,9 +22,11 @@ class ProposalController extends Controller
      */
     public function index(Request $request)
     {
-		$this->authorize('super admin|admin inovasi');
-
+		// dd(auth()->user()->roles);
+		// $this->authorize(['admin inovasi']);
 		$user = auth()->user();
+		abort_if(! $user->hasRole(['super admin', 'admin inovasi']), 403);
+
 
 		$q = $request->input('q');
 		// $propo = Proposal::latest();
