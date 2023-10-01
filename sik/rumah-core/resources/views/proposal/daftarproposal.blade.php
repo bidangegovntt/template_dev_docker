@@ -84,7 +84,7 @@
 
                         <div class="col-lg-4">
                           <div class="form-group">
-                            <label><strong>apakah pernah menjadi finalis 99?</strong></label>
+                            <label><strong>apakah pernah menjadi finalis TOP KOIN YANLIK?</strong></label>
                             <div class="form-check">
                               <input class="form-check-input kelompok-radio" type="radio" name="pernah_finalis99" id="pernah_finalis991" value="Ya" required>
                               <label class="form-check-label" for="radio1">
@@ -225,7 +225,7 @@
 <!--                                <label><input type="checkbox" name="category[]" value="Red"> Red</label> -->
                       <div class="form-row row">
                         <div class="form-group col-md-6">
-                          <label><strong>SDGS 2</strong></label>
+                          <label><strong>SDGS</strong></label>
                           <div>
                             <label><input type="checkbox" name="sdgs[]" value="tanpa kemiskinan"/>&nbsp;&nbsp;tanpa kemiskinan</label>
                           </div>
@@ -303,9 +303,9 @@
                             <label><strong>Unggah Surat Pernyataan Implementasi</strong></label><br>
                             <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="{{ asset('storage/Surat Pernyataan Implementasi Inovasi.pdf') }}" target="_blank">&nbsp;Unduh Template</a></i></label>
                             <div class="form-group">
-                                <input type="file" name="up_implementasi" placeholder="Choose files" multiple required ><br>
+                                <input type="file" name="up_implementasi" placeholder="Choose files" multiple required><br>
 <!--                                <textarea class="form-control" name="path_up_implementasi"></textarea>-->
-                                <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                             </div>
                             @error('files')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -318,8 +318,8 @@
                             <label><strong>Unggah Surat Pernyataan Identitas Perorangan atau Tim</strong></label><br>
                             <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="{{ asset('storage/Surat Pernyataan Identitas Inovator.pdf') }}" target="_blank">&nbsp;Unduh Template</a></i></label>
                             <div class="form-group">
-                                <input type="file" name="up_identitas" id="up_identitas" placeholder="Choose files" multiple required ><br>
-                                <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                <input type="file" name="up_identitas" id="up_identitas" placeholder="Choose files" multiple required><br>
+                                <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                             </div>
                             @error('files')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -332,8 +332,8 @@
                           <label><strong>Unggah Surat Pernyataan Kesediaan Replikasi</strong></label><br>
                           <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="{{ asset('storage/Surat Pernyataan Kesediaan Replikasi Inovasi.pdf') }}" target="_blank">&nbsp;Unduh Template</a></i></label>
                           <div class="form-group">
-                              <input type="file" name="up_replikasi" id="up_replikasi" placeholder="Choose files" multiple required ><br>
-                              <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                              <input type="file" name="up_replikasi" id="up_replikasi" placeholder="Choose files" multiple required><br>
+                              <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                           </div>
                           @error('files')
                               <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -369,7 +369,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">200 kata</strong></i></label>
-                          <textarea class="form-control" id="ringkasan" name="ringkasan" rows="3" maxlength="200" required></textarea>
+                          <textarea class="form-control" id="ringkasan" name="ringkasan" rows="3" required></textarea>
 <!--                          "halo ini kalima yang panjang".trim().split(' ').length -->
 
                           <div class="form-row row">
@@ -377,8 +377,8 @@
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_ringkasan" id="u_ringkasan" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_ringkasan" id="u_ringkasan" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -402,15 +402,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">300 kata</strong></i></label>
-                          <textarea class="form-control" id="latar_belakang" name="latar_belakang" rows="3" maxlength="300" required></textarea>
+                          <textarea class="form-control" id="latar_belakang" name="latar_belakang" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_latar_belakang" id="u_latar_belakang" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_latar_belakang" id="u_latar_belakang" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -430,15 +430,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">200 kata</strong></i></label>
-                          <textarea class="form-control" id="kebaharuan" name="kebaharuan" rows="3" maxlength="200" required></textarea>
+                          <textarea class="form-control" id="kebaharuan" name="kebaharuan" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_kebaharuan" id="u_kebaharuan" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_kebaharuan" id="u_kebaharuan" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -459,15 +459,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">200 kata</strong></i></label>
-                          <textarea class="form-control" id="implementasi_inovasi" name="implementasi_inovasi" rows="3" maxlength="200" required></textarea>
+                          <textarea class="form-control" id="implementasi_inovasi" name="implementasi_inovasi" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_implementasi_inovasi" id="u_implementasi_inovasi" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_implementasi_inovasi" id="u_implementasi_inovasi" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -490,15 +490,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">600 kata</strong></i></label>
-                          <textarea class="form-control" id="signifikansi" name="signifikansi" rows="3" maxlength="600" required></textarea>
+                          <textarea class="form-control" id="signifikansi" name="signifikansi" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_signifikansi" id="u_signifikansi" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_signifikansi" id="u_signifikansi" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -521,15 +521,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">100 kata</strong></i></label>
-                          <textarea class="form-control" id="adaptabilitas_1" name="adaptabilitas_1" rows="3" maxlength="100" required></textarea>
+                          <textarea class="form-control" id="adaptabilitas_1" name="adaptabilitas_1" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_adaptabilitas_1" id="u_adaptabilitas_1" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_adaptabilitas_1" id="u_adaptabilitas_1" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -543,15 +543,15 @@
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">200 kata</strong></i></label>
-                          <textarea class="form-control" id="adaptabilitas_2" name="adaptabilitas_2" rows="3" maxlength="200" required></textarea>
+                          <textarea class="form-control" id="adaptabilitas_2" name="adaptabilitas_2" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_adaptabilitas_2" id="u_adaptabilitas_2" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_adaptabilitas_2" id="u_adaptabilitas_2" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -576,15 +576,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">200 kata</strong></i></label>
-                          <textarea class="form-control" id="sumber_daya" name="sumber_daya" rows="3" maxlength="200" required></textarea>
+                          <textarea class="form-control" id="sumber_daya" name="sumber_daya" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_sumber_daya" id="u_sumber_daya" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_sumber_daya" id="u_sumber_daya" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -608,15 +608,15 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="mbr-section-lead text-justify" style="font-size:12px; color:#FF0000">
                             <i class="fa fa-list" aria-hidden="true">
                               Maksimal <strong style="color: #56a197;">500 kata</strong></i></label>
-                          <textarea class="form-control" id="keberlanjutan" name="keberlanjutan" rows="3" maxlength="500" required></textarea>
+                          <textarea class="form-control" id="keberlanjutan" name="keberlanjutan" rows="3" required></textarea>
 
                           <div class="form-row row">
                             <div class="col-md-12">
                               <label style="font-size:12px; color:#6699FF"><strong>Lampiran Pendukung</strong></label><br>
 <!--                              <label style="font-size:14px; color:#6699FF"><i class="fa fa-link"><a href="#">&nbsp;Unduh Template</a></i></label>-->
                               <div class="form-group">
-                                  <input type="file" name="u_keberlanjutan" id="u_keberlanjutan" placeholder="Choose files" multiple required ><br>
-                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 1 MB dengan Tipe PDF</label><br>
+                                  <input type="file" name="u_keberlanjutan" id="u_keberlanjutan" placeholder="Choose files" multiple required><br>
+                                  <label style="font-size:10px; color:#FF0000">Ketentuan Mengunggah File 2 MB dengan Tipe PDF</label><br>
                               </div>
                               @error('files')
                                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
