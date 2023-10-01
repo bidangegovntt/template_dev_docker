@@ -140,7 +140,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="judul_finalis99" name="judul_finalis99" placeholder="Judul Finalis 99">
+                          <input type="text" class="form-control" id="judul_finalis99" name="judul_finalis99" placeholder="Judul Finalis TOP KOIN YANLIK">
 							@error('judul_finalis99')
 								<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 							@enderror

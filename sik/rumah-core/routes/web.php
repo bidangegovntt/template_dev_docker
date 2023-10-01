@@ -266,5 +266,6 @@ Route::prefix('artisan')->group(function () {
 
 Route::get('/submit-proposal', [ProposalController::class, 'create'])->name('proposal.index')->middleware('auth');
 Route::post('/submit-proposal', [ProposalController::class, 'store'])->name('proposal.store')->middleware('auth');
+Route::get('/proposal/{proposal}', [ProposalController::class, 'show'])->name('proposal.show')->middleware('auth');
 // Route::resource('proposal', ProposalController::class)->middleware('auth');
 // Route::get('submit-proposal', [ProposalController::class, 'create'])->middleware('auth')->name('proposal.submit');
