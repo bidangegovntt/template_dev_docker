@@ -7,7 +7,6 @@ use App\Models\Proposal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use DB; //import fungsi query builder
-
 use App\Exports\ProposalExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreProposalRequest;
@@ -23,23 +22,37 @@ class ProposalController extends Controller
      */
     public function index(Request $request)
     {
-		$this->authorize('super admin');
+		// dd(auth()->user()->roles);
+		// $this->authorize(['admin inovasi']);
+		$user = auth()->user();
+		abort_if(! $user->hasRole(['super admin', 'admin inovasi']), 403);
+
 
 		$q = $request->input('q');
-		$propo = Proposal::latest();
+		// $propo = Proposal::latest();
 
-		if ($q) {
-			$propo->where('judul_proposal', 'like', '%' . $q . '%');
-		}
+		// if ($q) {
+		// 	$propo->where('judul_proposal', 'like', '%' . $q . '%');
+		// }
 			
-		$propo = $propo->paginate($this->defaultPagination);
+		// $propo = $propo->paginate($this->defaultPagination);
 /*
         return view ('propo.index',compact('propo'))->with('i', (request()->input('page', 1) -1) * 5);
 */
-        // mengambil dari tabel kategori
-		// $propo = DB::table('kategori') 
-		// 		->join('proposals', 'proposals.id_kategori', '=', 'kategori.id')
-		// 		->paginate();
+        // mengambil dari tabel proposal
+		 // $qb_propo = DB::table('proposals') 
+			 // ->join('kategories', 'proposals.id_kategori', '=', 'kategories.id');
+		$qb_propo = Proposal::with(['kategori', 'creator.city']);
+
+		if ($q) {
+			$qb_propo->where('judul_proposal', 'like', '%' . $q . '%');
+		}
+
+		if ($user->hasRole('admin inovasi')) {
+			$qb_propo->where('created_by', $user->id);
+		}
+
+		$propo = $qb_propo->paginate($this->defaultPagination);
 
 		//tampilkan view barang dan kirim datanya ke view tersebut
 		return view('/proposal/index')->with('propo', $propo);

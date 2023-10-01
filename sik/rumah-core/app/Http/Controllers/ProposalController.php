@@ -281,9 +281,11 @@ $input['id_kategori'] = $request->input('id_kategori');
     $input['sdgs'] = $request->input('sdgs');
 //dd($input);
 
-    $result=Proposal::create(
-        $input
-    );
+    $proposal = Proposal::make($input);
+	$proposal->created_by = auth()->user()->id;
+
+	$result = $proposal->save();
+
 //    dd($result);
 
 //Proposal::create($input);
@@ -313,8 +315,12 @@ $input['sdgs'] = $request->input('sdgs');
 }   
 */
 
+		if ($result) {
+			return redirect()->route('proposal.index')->with('success', 'Data submited successfully!');
+		}
 
-return redirect()->route('proposal.index');
+		return redirect()->route('proposal.index');
+
 
 //        return redirect()->route('propo.index')->with('succes','Data Berhasil di Input');
 //$proposal->name = $request->name;
@@ -375,10 +381,20 @@ return redirect(route('proposal.index'))->with('success','Data submited successf
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show(Proposal $propo)
-    // {
-		// return view('proposal.show', compact('propo'));
-    // }
+    public function show(Proposal $proposal)
+    {
+		$user = auth()->user();
+
+		abort_if(! $user->hasRole(['super admin', 'admin inovasi']), 403);
+
+		if ($user->hasRole('admin inovasi') && ! $user->hasRole('super admin')) {
+			abort_if($proposal->created_by != $user->id, 401);
+		}
+
+		$proposal->load(['kategori',  'creator.city']);
+
+		return view('proposal.show', compact('proposal'));
+    }
 
     /**
      * Show the form for editing the specified resource.
