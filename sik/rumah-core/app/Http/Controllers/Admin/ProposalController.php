@@ -27,8 +27,8 @@ class ProposalController extends Controller
 		$user = auth()->user();
 		abort_if(! $user->hasRole(['super admin', 'admin inovasi']), 403);
 
-
 		$q = $request->input('q');
+		$id_kategori = $request->input('id_kategori');
 		// $propo = Proposal::latest();
 
 		// if ($q) {
@@ -46,6 +46,10 @@ class ProposalController extends Controller
 
 		if ($q) {
 			$qb_propo->where('judul_proposal', 'like', '%' . $q . '%');
+		}
+
+		if ($id_kategori) {
+			$qb_propo->where('id_kategori', '=', $id_kategori);
 		}
 
 		if ($user->hasRole('admin inovasi')) {

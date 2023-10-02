@@ -7,9 +7,20 @@
     <x-slot name="content">
         <div class="flex">
             <div class="w-4/5">
-                <form>
-                    <input type="text" class="w-2/5 " name="q" placeholder="Cari..."
-                        value="{{ request('q')  }}">
+                <form onChange="this.submit()">
+                    <x-input type="text" class="w-2/5 " name="q" placeholder="Cari..."
+                        value="{{ request('q')  }}"></x-input>
+					<x-select :all=true name="id_kategori">
+						@foreach(\App\Models\Kategori::all() as $kategori)
+							<option value="{{ $kategori->id }}" 
+							@if(request('id_kategori') == $kategori->id)
+								selected="selected"
+							@endif
+							>
+								{{ $kategori->cat_name}}
+							</option>
+						@endforeach
+					</x-select>
                 </form>
             </div>
 
