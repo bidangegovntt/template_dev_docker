@@ -59,6 +59,16 @@ class Proposal extends Model
         'path_u_keberlanjutan'
     ];
 
+	public function creator()
+	{
+		return $this->belongsTo(User::class, 'created_by',  'id');
+	}
+
+	public function kategori()
+	{
+		return $this->belongsTo(Kategori::class, 'id_kategori',  'id');
+	}
+
     public function setSdgsAttribute($value)
     {
         $this->attributes['sdgs'] = json_encode($value);
